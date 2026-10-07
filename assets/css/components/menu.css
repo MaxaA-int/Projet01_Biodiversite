@@ -3,5 +3,36 @@
 /* CSS MENU (Navigation) */
 
 @layer components {
-  
+  .menu-principal__containeur {
+    background-color: var(--Bleu-Fonce);
+    min-width: 320px;
+    max-width: 768px;
+    margin: 0 auto;
+    padding-block: 1rem;
+
+    .nav-principale {
+      .nav__list {
+        justify-content: flex-start;
+        gap: 1rem;
+        align-items: start;
+
+        .nav__list-item a {
+            color: var(--Blanc);
+            text-decoration: none;
+        }
+      }
+    }
+  }
+
+  /* Affichage Minimum Tablette - 528px */
+  @media screen and (min-width: 33rem) {
+  }
+
+  /* Affichage Grosse Tablette - 750px */
+  @media screen and (min-width: 48.875rem) {
+  }
+
+  /* Affichage Table - 1080px */
+  @media screen and (min-width: 67.5rem) {
+  }
 }

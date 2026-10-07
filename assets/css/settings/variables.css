@@ -4,7 +4,8 @@
   /* Couleurs */
 
   /* Niveaux de Gris */
-  --Blanc: var(--qc-color-white);
+  --Blanc: #fff;
+  --Blanc-adapte: var(--qc-color-white);
   --Gris-Pale: var(--qc-color-grey-pale);
   --Gris-Clair: var(--qc-color-grey-light);
   --Gris: var(--qc-color-grey-regular);
