@@ -11,12 +11,10 @@
 @import url("base/normalize.css") layer(base);
 
 /* Dossier : css/settings/qc-sdg */
-@import url("settings/qc-sdg/qc-sdg-design-tokens-rfz100.min.css") layer(qc-sdg);
-@import url("settings/qc-sdg/qc-sdg-design-tokens.min.css") layer(qc-sdg);
-@import url("settings/qc-sdg/qc-sdg-no-grid-rfz100.min.css") layer(qc-sdg);
-@import url("settings/qc-sdg/qc-sdg-no-grid.min.css") layer(qc-sdg);
-@import url("settings/qc-sdg/qc-sdg-rfz100.min.css") layer(qc-sdg);
-@import url("settings/qc-sdg/qc-sdg.min.css") layer(qc-sdg);
+@import url("settings/qc-sdg/qc-doc-sdg.css") layer(qc-sdg);
+@import url("settings/qc-sdg/qc-sdg-design-tokens.css") layer(qc-sdg);
+@import url("settings/qc-sdg/qc-sdg-no-grid.css") layer(qc-sdg);
+@import url("settings/qc-sdg/qc-sdg.css") layer(qc-sdg);
 
 /* Dossier : css/settings/ */
 @import url("settings/general.css") layer(settings);

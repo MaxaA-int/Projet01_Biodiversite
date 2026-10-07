@@ -1,3 +1,15 @@
+<qc-piv-header title-text="Titre du site ou du service" title-url="https://www.quebec.ca/"
+    alt-logo="Accédez à Québec.ca">
+    <nav slot="links" aria-label="Navigation PIV">
+        <ul>
+            <li><a href="#fakeEnglish">English</a>
+            </li>
+            <li><a href="#">Nous joindre</a>
+            </li>
+        </ul>
+    </nav>
+</qc-piv-header>
+
 <a href="#contenu" class="screen-reader-only focusable">Allez au contenu</a>
 <nav class="nav" aria-label="Menu Principal">
     <ul class="nav__list" id="navList">
