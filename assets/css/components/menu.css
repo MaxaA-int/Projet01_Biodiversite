@@ -5,20 +5,24 @@
 @layer components {
   .menu-principal__containeur {
     background-color: var(--Bleu-Fonce);
-    min-width: 320px;
-    max-width: 768px;
     margin: 0 auto;
-    padding-block: 1rem;
+    height: 80px;
 
     .nav-principale {
+      min-width: 320px;
+      max-width: 768px;
+      margin: 0 auto;
+      height: inherit;
+
       .nav__list {
         justify-content: flex-start;
         gap: 1rem;
-        align-items: start;
+        margin: 0;
+        height: inherit;
+        align-items: flex-start;
 
-        .nav__list-item a {
-            color: var(--Blanc);
-            text-decoration: none;
+        .nav__list-item {
+          margin: 0;
         }
       }
     }
@@ -34,5 +38,14 @@
 
   /* Affichage Table - 1080px */
   @media screen and (min-width: 67.5rem) {
+    .menu-principal__containeur {
+      .nav-principale {
+        max-width: 1200px;
+
+        .nav__list {
+          align-items: center;
+        }
+      }
+    }
   }
 }

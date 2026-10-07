@@ -26,4 +26,6 @@
   --Rouge: var(--qc-color-red-regular);
   --Vert: var(--qc-color-green-regular);
   --Orange: #CC711C;
+
+  font-size: 16px;
 }

@@ -43,6 +43,36 @@
 
   /* États des boutons/liens généraux */
 
+  a.nav__link {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--Blanc);
+    text-decoration: none;
+
+    &:hover {
+      border-bottom: 1px solid var(--Blanc);
+    }
+
+    &:focus {
+      border-bottom: 1px solid var(--Bleu-Clair);
+    }
+  }
+
+  /* Affichage Minimum Tablette - 528px */
+  @media screen and (min-width: 33rem) {
+  }
+
+  /* Affichage Grosse Tablette - 768px */
+  @media screen and (min-width: 48.875rem) {
+  }
+
+  /* Affichage Table - 1080px */
+  @media screen and (min-width: 67.5rem) {
+    a.nav__link {
+      font-size: 1.125rem;
+    }
+  }
+
   /* Classes - Variables */
 
   .flex {
