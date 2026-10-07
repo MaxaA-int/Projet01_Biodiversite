@@ -279,7 +279,7 @@ label.qc-choicefield-label input.qc-choicefield.qc-compact {
 }
 
 .qc-dark-theme, :root.qc-dark-theme {
-  --qc-color-white: #121519;
+  --qc-color-white: #ffffff;
   --qc-color-white-rgb: 18, 21, 25;
   --qc-color-blue-pale: #162B47;
   --qc-color-blue-pale-rgb: 22, 43, 71;
@@ -780,7 +780,7 @@ qc-icon:not(:defined)[size=xl] {
   font-style: normal;
   font-weight: 100 700;
   font-display: block;
-  src: url("../../dist/fonts/material-symbols-rounded.woff2") format("woff2");
+  src: url("../../../fonts/material-symbols-rounded.woff2") format("woff2");
 }
 .qc-icon-font {
   font-family: "Material Symbols Rounded";
@@ -987,7 +987,7 @@ dd {
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 400;
-  src: url("../../dist/fonts/open-sans-v43-latin-regular.woff2") format("woff2");
+  src: url("../../../fonts/open-sans-v43-latin-regular.woff2") format("woff2");
 }
 /* open-sans-italic - latin */
 @font-face {
@@ -995,7 +995,7 @@ dd {
   font-family: "Open Sans";
   font-style: italic;
   font-weight: 400;
-  src: url("../../dist/fonts/open-sans-v43-latin-italic.woff2") format("woff2");
+  src: url("../../../fonts/open-sans-v43-latin-italic.woff2") format("woff2");
 }
 /* open-sans-500 - latin */
 @font-face {
@@ -1003,7 +1003,7 @@ dd {
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 500;
-  src: url("../../dist/fonts/open-sans-v43-latin-500.woff2") format("woff2");
+  src: url("../../../fonts/open-sans-v43-latin-500.woff2") format("woff2");
 }
 /* open-sans-500italic - latin */
 @font-face {
@@ -1011,7 +1011,7 @@ dd {
   font-family: "Open Sans";
   font-style: italic;
   font-weight: 500;
-  src: url("../../dist/fonts/open-sans-v43-latin-500italic.woff2") format("woff2");
+  src: url("../../../fonts/open-sans-v43-latin-500italic.woff2") format("woff2");
 }
 /* open-sans-600 - latin */
 @font-face {
@@ -1019,7 +1019,7 @@ dd {
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 600;
-  src: url("../../dist/fonts/open-sans-v43-latin-600.woff2") format("woff2");
+  src: url("../../../fonts/open-sans-v43-latin-600.woff2") format("woff2");
 }
 /* open-sans-600italic - latin */
 @font-face {
@@ -1027,7 +1027,7 @@ dd {
   font-family: "Open Sans";
   font-style: italic;
   font-weight: 600;
-  src: url("../../dist/fonts/open-sans-v43-latin-600italic.woff2") format("woff2");
+  src: url("../../../fonts/open-sans-v43-latin-600italic.woff2") format("woff2");
 }
 /* open-sans-700 - latin */
 @font-face {
@@ -1035,7 +1035,7 @@ dd {
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 700;
-  src: url("../../dist/fonts/open-sans-v43-latin-700.woff2") format("woff2");
+  src: url("../../../fonts/open-sans-v43-latin-700.woff2") format("woff2");
 }
 /* open-sans-700italic - latin */
 @font-face {
@@ -1043,7 +1043,7 @@ dd {
   font-family: "Open Sans";
   font-style: italic;
   font-weight: 700;
-  src: url("../../dist/fonts/open-sans-v43-latin-700italic.woff2") format("woff2");
+  src: url("../../../fonts/open-sans-v43-latin-700italic.woff2") format("woff2");
 }
 /* roboto-regular - latin */
 @font-face {
@@ -1051,7 +1051,7 @@ dd {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
-  src: url("../../dist/fonts/roboto-v48-latin-regular.woff2") format("woff2");
+  src: url("../../../fonts/roboto-v48-latin-regular.woff2") format("woff2");
 }
 /* roboto-italic - latin */
 @font-face {
@@ -1059,7 +1059,7 @@ dd {
   font-family: "Roboto";
   font-style: italic;
   font-weight: 400;
-  src: url("../../dist/fonts/roboto-v48-latin-italic.woff2") format("woff2");
+  src: url("../../../fonts/roboto-v48-latin-italic.woff2") format("woff2");
 }
 /* roboto-500 - latin */
 @font-face {
@@ -1067,7 +1067,7 @@ dd {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
-  src: url("../../dist/fonts/roboto-v48-latin-500.woff2") format("woff2");
+  src: url("../../../fonts/roboto-v48-latin-500.woff2") format("woff2");
 }
 /* roboto-500italic - latin */
 @font-face {
@@ -1075,7 +1075,7 @@ dd {
   font-family: "Roboto";
   font-style: italic;
   font-weight: 500;
-  src: url("../../dist/fonts/roboto-v48-latin-500italic.woff2") format("woff2");
+  src: url("../../../fonts/roboto-v48-latin-500italic.woff2") format("woff2");
 }
 /* roboto-600 - latin */
 @font-face {
@@ -1083,7 +1083,7 @@ dd {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 600;
-  src: url("../../dist/fonts/roboto-v48-latin-600.woff2") format("woff2");
+  src: url("../../../fonts/roboto-v48-latin-600.woff2") format("woff2");
 }
 /* roboto-600italic - latin */
 @font-face {
@@ -1091,7 +1091,7 @@ dd {
   font-family: "Roboto";
   font-style: italic;
   font-weight: 600;
-  src: url("../../dist/fonts/roboto-v48-latin-600italic.woff2") format("woff2");
+  src: url("../../../fonts/roboto-v48-latin-600italic.woff2") format("woff2");
 }
 /* roboto-700 - latin */
 @font-face {
@@ -1099,7 +1099,7 @@ dd {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
-  src: url("../../dist/fonts/roboto-v48-latin-700.woff2") format("woff2");
+  src: url("../../../fonts/roboto-v48-latin-700.woff2") format("woff2");
 }
 /* roboto-700italic - latin */
 @font-face {
@@ -1107,7 +1107,7 @@ dd {
   font-family: "Roboto";
   font-style: italic;
   font-weight: 700;
-  src: url("../../dist/fonts/roboto-v48-latin-700italic.woff2") format("woff2");
+  src: url("../../../fonts/roboto-v48-latin-700italic.woff2") format("woff2");
 }
 hr {
   margin: var(--qc-spacer-lg) 0;
