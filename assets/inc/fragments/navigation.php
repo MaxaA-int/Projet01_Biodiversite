@@ -13,7 +13,7 @@
         <li class="nav__list-item">
             <a href="<?php echo $niveau ?>pages/a-propos/index.php" class="nav__link">À propos</a>
         </li>
-        
+
         <li class="nav__list-item">
             <a href="<?php echo $niveau ?>pages/nous-contacter/index.php" class="nav__link">Nous contacter</a>
         </li>
