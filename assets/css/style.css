@@ -1,0 +1,30 @@
+/* STYLE */
+@charset "UTF-8";
+
+/* 1. Déclaration de l'ordre de priorité des couches
+(du moins prioritaire au plus prioritaire) */
+@layer base, qc-sdg, settings, components;
+
+/* 2. Importation des fichiers physiques dans les couches virtuelles */
+
+/* Dossier : css/base/ */
+@import url("base/normalize.css") layer(base);
+
+/* Dossier : css/settings/qc-sdg */
+@import url("settings/qc-sdg/qc-sdg-design-tokens-rfz100.min.css") layer(qc-sdg);
+@import url("settings/qc-sdg/qc-sdg-design-tokens.min.css") layer(qc-sdg);
+@import url("settings/qc-sdg/qc-sdg-no-grid-rfz100.min.css") layer(qc-sdg);
+@import url("settings/qc-sdg/qc-sdg-no-grid.min.css") layer(qc-sdg);
+@import url("settings/qc-sdg/qc-sdg-rfz100.min.css") layer(qc-sdg);
+@import url("settings/qc-sdg/qc-sdg.min.css") layer(qc-sdg);
+
+/* Dossier : css/settings/ */
+@import url("settings/general.css") layer(settings);
+@import url("settings/variables.css") layer(settings);
+
+/* Dossier : css/components/ */
+@import url("components/menu.css") layer(components);
+@import url("components/main.css") layer(components);
+@import url("components/footer.css") layer(components);
+
+

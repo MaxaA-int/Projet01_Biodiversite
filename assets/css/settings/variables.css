@@ -1,0 +1,28 @@
+/* VARIABLES */
+
+:root {
+  /* Couleurs */
+
+  /* Niveaux de Gris */
+  --Blanc: var(--qc-color-white);
+  --Gris-Pale: var(--qc-color-grey-pale);
+  --Gris-Clair: var(--qc-color-grey-light);
+  --Gris: var(--qc-color-grey-regular);
+  --Gris-Moyen: var(--qc-color-grey-medium);
+  --Gris-Fonce: var(--qc-color-grey-dark);
+  --Carbone: #0B0A0A;
+
+  /* Couleurs principales */
+  --Bleu-Pale: var(--qc-color-blue-pale);
+  --Bleu-Clair: var(--qc-color-blue-light);
+  --Bleu: var(--qc-color-blue-regular);
+  --Bleu-PIVOT: var(--qc-color-blue-pivot);
+  --Bleu-Moyen: var(--qc-color-blue-medium);
+  --Bleu-Fonce: var(--qc-color-blue-dark);
+
+  /* Couleurs secondaires */
+  --Rose: var(--qc-color-pink-regular);
+  --Rouge: var(--qc-color-red-regular);
+  --Vert: var(--qc-color-green-regular);
+  --Orange: #CC711C;
+}
