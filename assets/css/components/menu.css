@@ -3,49 +3,88 @@
 /* CSS MENU (Navigation) */
 
 @layer components {
-  .menu-principal__containeur {
-    background-color: var(--Bleu-Fonce);
-    margin: 0 auto;
-    height: 80px;
-
-    .nav-principale {
-      min-width: 320px;
-      max-width: 768px;
-      margin: 0 auto;
-      height: inherit;
-
-      .nav__list {
-        justify-content: flex-start;
-        gap: 1rem;
-        margin: 0;
-        height: inherit;
-        align-items: flex-start;
-
-        .nav__list-item {
-          margin: 0;
-        }
-      }
-    }
-  }
-
-  /* Affichage Minimum Tablette - 528px */
-  @media screen and (min-width: 33rem) {
-  }
-
-  /* Affichage Grosse Tablette - 750px */
-  @media screen and (min-width: 48.875rem) {
-  }
-
-  /* Affichage Table - 1080px */
-  @media screen and (min-width: 67.5rem) {
     .menu-principal__containeur {
-      .nav-principale {
-        max-width: 1200px;
+        background-color: var(--Bleu-Fonce);
+        margin: 0 auto;
+        height: 80px;
 
-        .nav__list {
-          align-items: center;
+        .nav-principale {
+            min-width: 320px;
+            max-width: 768px;
+            margin: 0 auto;
+            height: inherit;
+
+            .nav__list {
+                justify-content: flex-start;
+                gap: 1rem;
+                margin: 0;
+                height: inherit;
+                align-items: flex-start;
+
+                .nav__list-item {
+                    margin: 0;
+                }
+            }
         }
-      }
     }
-  }
+
+    .banniere-hero__containeur {
+        width: 100%;
+
+        background-image: url("../../img/IMG_Rorqual-commun_fredklus-melccfp.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding-block: 10rem;
+        margin: 2rem auto;
+
+        .banniere-hero__img {
+            display: none;
+        }
+
+        .banniere-hero__info {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 2rem;
+            background-color: rgba(74 152 217 / 35%);
+            padding-block: 4rem;
+
+            .banniere-hero__titre {
+                margin-inline: 2rem;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                h2 {
+                    margin: 0;
+                }
+            }
+
+            button {
+                margin-inline: 2rem;
+            }
+        }
+    }
+
+    /* Affichage Minimum Tablette - 528px */
+    @media screen and (min-width: 33rem) {
+    }
+
+    /* Affichage Grosse Tablette - 750px */
+    @media screen and (min-width: 48.875rem) {
+    }
+
+    /* Affichage Table - 1080px */
+    @media screen and (min-width: 67.5rem) {
+        .menu-principal__containeur {
+            .nav-principale {
+                max-width: 1200px;
+
+                .nav__list {
+                    align-items: center;
+                }
+            }
+        }
+    }
 }

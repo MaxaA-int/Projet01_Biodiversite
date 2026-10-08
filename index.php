@@ -24,7 +24,28 @@ $niveau = '';
 <header class="entete">
     <?php include($niveau . "assets/inc/fragments/navigation.php") ?>
 
-    
+    <div class="banniere-hero__containeur">
+        <picture class="banniere-hero__img">
+            <source
+                    srcset="
+                    assets/img/IMG_Rorqual-commun_fredklus-melccfp.jpg 1x
+                    assets/img/IMG_Rorqual-commun_fredklus-melccfp.jpg 2x
+                  "
+            />
+            <img
+                    src="assets/img/IMG_Rorqual-commun_fredklus-melccfp.jpg"
+                    alt="Image de Rorqual Commun"
+            />
+        </picture>
+        <div class="banniere-hero__info">
+            <div class="banniere-hero__titre">
+                <h2>Découvrir.</h2>
+                <h2>Comprendre.</h2>
+                <h2>Protéger.</h2>
+            </div>
+            <button class="qc-button qc-primary">Découvrir les espèces menacées</button>
+        </div>
+    </div>
 </header>
 
 <main>
