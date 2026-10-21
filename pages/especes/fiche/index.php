@@ -2,7 +2,7 @@
 
 $niveau = '../../../';
 
-// include($niveau . 'assets/inc/config.inc.php');
+include($niveau . 'assets/inc/config.inc.php');
 
 // $intIdArtiste = intval($_GET['idArtiste']);
 
@@ -15,6 +15,14 @@ $niveau = '../../../';
 // $pdosResultat = $pdoConnexion->query($strRequete);
 // $arrArtistes = $pdosResultat->fetch();
 // $pdosResultat->closecursor();
+
+$strRequete = 'SELECT * FROM especes';
+
+$pdosResultat = $pdoConnexion->prepare($strRequete);
+$pdosResultat->execute();
+$arrEspeces = $pdosResultat->fetchAll();
+
+$pdosResultat->closeCursor();
 
 ?>
 
@@ -36,17 +44,23 @@ $niveau = '../../../';
 
 <body>
 
-    <?php include($niveau . "assets/inc/fragments/navigation.php") ?>
+<?php include($niveau . "assets/inc/fragments/navigation.php") ?>
 
-    <h1>Fiche de l'espèce</h1>
+<h1>Fiche de l'espèce</h1>
 
-    <?php
-    // echo "Nom : $arrArtistes[nom] <br>";
-    // echo "Style(s) : $arrArtistes[style_nom] <br>";
-    // echo "Provenance : $arrArtistes[provenance] <br>";
-    // echo "Description : $arrArtistes[description] <br>";
-    // echo "Site Web : <a href='$arrArtistes[site_web]' target='_blank'>$arrArtistes[site_web]</a> <br>";
-    ?>
+<?php
+foreach ($arrEspeces as $espece) {
+    echo "<h2>$espece[nom_francais]</h2>";
+}
+?>
+
+<?php
+// echo "Nom : $arrArtistes[nom] <br>";
+// echo "Style(s) : $arrArtistes[style_nom] <br>";
+// echo "Provenance : $arrArtistes[provenance] <br>";
+// echo "Description : $arrArtistes[description] <br>";
+// echo "Site Web : <a href='$arrArtistes[site_web]' target='_blank'>$arrArtistes[site_web]</a> <br>";
+?>
 
 </body>
 

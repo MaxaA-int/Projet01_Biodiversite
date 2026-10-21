@@ -2,75 +2,18 @@
 
 $niveau = '../../';
 
-// include($niveau . 'assets/inc/config.inc.php');
+include($niveau . 'assets/inc/config.inc.php');
 
-// $intIdStyle = isset($_GET['idStyle']) ? intval($_GET['idStyle']) : 0;
+$strRequete = 'SELECT * FROM especes
+                ORDER BY nom_francais';
 
-// $strFiltre = "";
-// if ($intIdStyle !== 0) {
-//     $strFiltre = "WHERE styles.id = $intIdStyle";
-// }
+$pdosResultat = $pdoConnexion->prepare($strRequete);
+$pdosResultat->execute();
+$arrEspeces = $pdosResultat->fetchAll();
 
-// Requete Participants
-// $strRequete =
-//     "SELECT DISTINCT artistes.nom, artistes.id
-//     FROM artistes 
-//     INNER JOIN styles_artistes ON artistes.id = styles_artistes.artiste_id 
-//     INNER JOIN styles ON styles_artistes.style_id = styles.id
-//     $strFiltre
-//     ORDER BY artistes.nom";
+$pdosResultat->closeCursor();
 
-// $pdosResultat = $pdoConnexion->query($strRequete);
 
-// $arrArtistes = array();
-// $ligne = $pdosResultat->fetch();
-// for ($intCptEnr = 0; $intCptEnr < $pdosResultat->rowCount(); $intCptEnr++) {
-//     $arrArtistes[$intCptEnr]['id'] = $ligne['id'];
-//     $arrArtistes[$intCptEnr]['nom'] = $ligne['nom'];
-
-//     //On établi une deuxième requête pour afficher les styles du artiste
-//     $strRequete = 'SELECT nom FROM styles
-// 		     INNER JOIN styles_artistes ON styles.id = styles_artistes.style_id
-// 		     WHERE styles_artistes.artiste_id=' . $ligne['id'];
-
-//     //Initialisation de l'objet PDOStatement et exécution de la requête
-//     $pdosSousResultat = $pdoConnexion->prepare($strRequete);
-//     $pdosSousResultat->execute();
-
-//     $ligneStyle = $pdosSousResultat->fetch();
-//     $strStyle = "";
-//     //Extraction des noms de Styles de la sous requête
-//     for ($intCptStyle = 0; $intCptStyle < $pdosSousResultat->rowCount(); $intCptStyle++) {
-//         if ($strStyle != "") {
-//             $strStyle = $strStyle . ", ";    //ajout d'une virgule lorsque nécessaire
-//         }
-//         $strStyle = $strStyle . $ligneStyle['nom'];
-//         $ligneStyle = $pdosSousResultat->fetch();
-//     }
-//     //On libère la sous requête
-//     $pdosSousResultat->closeCursor();
-
-//     //ajout d'un propriété pour afficher les styles
-//     $arrArtistes[$intCptEnr]['styles'] = $strStyle;
-
-//     //On passe à l'autre artiste
-//     $ligne = $pdosResultat->fetch();
-// }
-
-// $pdosResultat->closecursor();
-
-// // Requete Styles
-// $strRequete = "SELECT id, nom FROM styles";
-
-// $pdosResultat = $pdoConnexion->query($strRequete);
-
-// $arrStyles = array();
-// for ($intCptEnr = 0; $ligne = $pdosResultat->fetch(); $intCptEnr++) {
-//     $arrStyles[$intCptEnr]['id'] = $ligne['id'];
-//     $arrStyles[$intCptEnr]['nom'] = $ligne['nom'];
-// }
-
-// $pdosResultat->closecursor();
 
 ?>
 
@@ -92,33 +35,46 @@ $niveau = '../../';
 
 <body>
 
-    <?php include($niveau . "assets/inc/fragments/navigation.php") ?>
+<?php include($niveau . "assets/inc/fragments/navigation.php") ?>
+
+<main>
+    <div class="fil-arianne">
+        <p>fil d'arianne</p>
+    </div>
 
     <h1>Liste des espèces</h1>
 
-    <ul>
-        <?php
+    <form action="index.php" method="post">
+        <qc-search-bar name="tx_solr[q]"></qc-search-bar>
+    </form>
 
-        // for ($intCptEnr = 0; $intCptEnr < count($arrArtistes); $intCptEnr++) {
-        //     echo '<li><a href="fiche/index.php?idArtiste=' . $arrArtistes[$intCptEnr]["id"] . '">' . $arrArtistes[$intCptEnr]['nom'] . '</a></li>';
-        //     echo '<p> Style(s) : ' . $arrArtistes[$intCptEnr]['styles'] . '</p>';
-        //     echo '<br>';
-        // }
+    <ul class="liste-especes__containenur">
+        <?php
+        foreach ($arrEspeces as $espece) {
+            echo "<li class='liste-especes__item'>";
+
+            echo "<img src='$niveau assets/img/especes/' alt='$espece[nom_francais]'>";
+
+            echo "<div class='liste-especes__noms'>";
+            echo "<h3>$espece[nom_francais]</h3>";
+            echo "<p>$espece[nom_scientifique]</p>";
+            echo "</div>";
+
+            echo "<div class='liste-especes__appartenances'>";
+            echo "<p>Groupe : X</p>";
+            echo "<p>Statut : $espece[statut_LEMV]</p>";
+            echo "</div>";
+            echo "</li>";
+
+
+        }
         ?>
     </ul>
 
-    <ul>
-        <li>
-            <!-- <a href="index.php">Tous les styles</a> -->
-        </li>
-        <br>
-        <?php
-        // for ($intCptEnr = 0; $intCptEnr < count($arrStyles); $intCptEnr++) {
-        //     echo '<li><a href="index.php?idStyle=' . $arrStyles[$intCptEnr]["id"] . '">' . $arrStyles[$intCptEnr]['nom'] . '</a></li>';
-        //     echo '<br>';
-        // }
-        ?>
-    </ul>
+</main>
+
+
+
 
 </body>
 
