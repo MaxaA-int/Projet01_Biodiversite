@@ -2,19 +2,30 @@
 
 $niveau = '../../../';
 
-// include($niveau . 'assets/inc/config.inc.php');
+include($niveau . 'assets/inc/config.inc.php');
 
-// $intIdArtiste = intval($_GET['idArtiste']);
+$intIdEspece = intval($_GET['id_espece']);
 
-// $strRequete =
-//     "SELECT artistes.*, styles.nom AS style_nom FROM artistes 
-// INNER JOIN styles_artistes ON artistes.id = styles_artistes.artiste_id 
-// INNER JOIN styles ON styles_artistes.style_id = styles.id 
-// WHERE artistes.id = $intIdArtiste";
+$strRequete =
+"SELECT especes.*, groupes.nom_groupe AS groupe_nom FROM especes 
+INNER JOIN groupes ON especes.groupe_id = groupes.id
+WHERE especes.id = $intIdEspece";
 
-// $pdosResultat = $pdoConnexion->query($strRequete);
-// $arrArtistes = $pdosResultat->fetch();
-// $pdosResultat->closecursor();
+$pdosResultat = $pdoConnexion->query($strRequete);
+
+$arrEspeces = $pdosResultat->fetch();
+$pdosResultat->closecursor();
+
+$strRequeteImage =
+"SELECT images.* 
+FROM images
+INNER JOIN especes ON images.espece_id = especes.id
+WHERE images.espece_id = $intIdEspece";
+
+$pdosResultatImage = $pdoConnexion->query($strRequeteImage);
+
+$arrImage = $pdosResultatImage->fetch();
+$pdosResultatImage->closecursor();
 
 ?>
 
@@ -38,16 +49,27 @@ $niveau = '../../../';
 
     <?php include($niveau . "assets/inc/fragments/navigation.php") ?>
 
-    <h1>Fiche de l'espèce</h1>
-
-    <?php
-    // echo "Nom : $arrArtistes[nom] <br>";
-    // echo "Style(s) : $arrArtistes[style_nom] <br>";
-    // echo "Provenance : $arrArtistes[provenance] <br>";
-    // echo "Description : $arrArtistes[description] <br>";
-    // echo "Site Web : <a href='$arrArtistes[site_web]' target='_blank'>$arrArtistes[site_web]</a> <br>";
-    ?>
-
+    <h1><?php echo $arrEspeces['nom_francais']; ?></h1>
+    <ul>
+        <?php if ($arrEspeces['nom_scientifique'] != '') { ?>
+            <li>Nom scientifique : <?php echo $arrEspeces['nom_scientifique']; ?></li>
+        <?php } ?>
+        <?php if ($arrEspeces['autres_noms_francais'] != '') { ?>
+            <li>Autres noms francais : <?php echo $arrEspeces['autres_noms_francais']; ?></li>
+        <?php } ?>
+    </ul>
+    <hr>
+    <ul>
+        <?php if ($arrEspeces['statut_LEMV'] != '') { ?>
+            <li>Statu : <?php echo $arrEspeces['statut_LEMV']; ?></li>
+        <?php } ?>
+        <?php if ($arrEspeces['groupe_nom'] != '') { ?>
+            <li>Groupe : <?php echo $arrEspeces['groupe_nom']; ?></li>
+        <?php } ?>
+        <?php if ($arrImage['nom_image'] != '') { ?>
+            <img src="<?php echo $niveau ?>assets/img/<?php echo $arrImage['nom_image']; ?>" alt="<?php echo $arrImage['bas-de-vignette']; ?>">
+        <?php } ?>
+    </ul>
 </body>
 
 </html>
