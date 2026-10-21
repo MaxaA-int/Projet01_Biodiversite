@@ -3,5 +3,35 @@
 /* CSS MAIN */
 
 @layer components {
+    .main__titre {
+        width: 100%;
+        padding-inline: 1rem;
+    }
 
+    .table-des-matieres__containeur {
+        width: 100%;
+        max-width: 768px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+        color: var(--Blanc);
+
+        flex-direction: column;
+
+        p {
+            font-size: 14px;
+            font-weight: 700;
+            margin: 0;
+            border-bottom: 1px solid var(--Gris-Clair);
+            padding-block: 1rem;
+        }
+
+        a {
+            font-size: 14px;
+            font-weight: 400;
+            text-decoration: none;
+            border-bottom: 1px solid var(--Gris-Clair);
+            padding-block: 1rem;
+        }
+
+    }
 }
