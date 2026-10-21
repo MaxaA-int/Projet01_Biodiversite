@@ -5,16 +5,20 @@ ini_set('display_errors', 1); //Permet de voir les erreurs PHP et le no de ligne
 $blnLocal = (stristr($_SERVER['HTTP_HOST'], 'local') || (substr($_SERVER['HTTP_HOST'], 0, 7) == '192.168')) ? TRUE : FALSE;
 
 // Selon l'environnement d'exécution (développement ou production)
-$strBD = '26_scriptCase';
-$strUser = '26_scriptCase';
-$strPassword = 'gabNmax07!?r';
+
 
 if ($blnLocal) {
     $strHost = 'localhost';
+    $strBD='26_scriptCase';
+    $strUser = '26_scriptCase';
+    $strPassword= 'gabNmax07!?r';
     error_reporting(E_ALL);
     
 } else {
     $strHost = 'timunix3.cegep-ste-foy.qc.ca';
+    $strBD = '26_scriptCase';
+    $strUser = '26_scriptCase';
+    $strPassword = 'gabNmax07!?r';
     error_reporting(E_ALL & ~E_NOTICE);
 }
 

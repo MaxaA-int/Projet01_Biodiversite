@@ -52,7 +52,11 @@ $niveau = '';
     <h1 class="main__titre">Objectif Biodiversité</h1>
 
     <section class="table-des-matieres__containeur flex">
-        <p>Table des matières</p>
+
+        <div class="table-des-matieres__titre flex">
+            <p>Table des matières</p>
+        </div>
+
         <a href="#mise-a-action">Mise à l'action</a>
         <a href="#statuts">Statuts</a>
         <a href="#especes-decouvrir">Espèces à découvrir</a>

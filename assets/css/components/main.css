@@ -3,6 +3,11 @@
 /* CSS MAIN */
 
 @layer components {
+
+    main {
+        padding-inline: 1rem;
+    }
+
     .main__titre {
         width: 100%;
         padding-inline: 1rem;
@@ -17,12 +22,16 @@
 
         flex-direction: column;
 
-        p {
-            font-size: 14px;
-            font-weight: 700;
-            margin: 0;
+        .table-des-matieres__titre {
+            justify-content: space-between;
             border-bottom: 1px solid var(--Gris-Clair);
-            padding-block: 1rem;
+
+            p {
+                font-size: 14px;
+                font-weight: 700;
+                margin: 0;
+                padding-block: 1rem;
+            }
         }
 
         a {
