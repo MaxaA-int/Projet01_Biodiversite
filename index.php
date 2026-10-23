@@ -63,6 +63,24 @@ $niveau = '';
         <a href="#actualites">Actualités</a>
     </section>
 
+    <section class="mise-a-action" id="mise-a-action">
+        <h2>Mise à l'action et sensibilisation</h2>
+
+        <div class="mise-a-action__pourquoi">
+            <p>Pourquoi protéger ces espèces ?</p>
+            <ul>
+                <li>Des écosystèmes de santé</li>
+                <li>Une nature plus résiliente</li>
+                <li>Un patrimoine naturel unique</li>
+            </ul>
+
+        </div>
+
+        <p>Chaque espèce joue un rôle essentiel dans l’équilibre des écosystèmes. Leur protection, c’est préserver la
+            biodiversité, la qualité de nos milieux naturels et notre patrimoine pour les générations futures
+        </p>
+    </section>
+
 
 </main>
 </body>

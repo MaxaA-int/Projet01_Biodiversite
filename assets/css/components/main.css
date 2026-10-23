@@ -10,14 +10,13 @@
 
     .main__titre {
         width: 100%;
-        padding-inline: 1rem;
     }
 
     .table-des-matieres__containeur {
         width: 100%;
         max-width: 768px;
         margin: 0 auto;
-        padding: 2rem 1rem;
+        padding-block: 2rem;
         color: var(--Blanc);
 
         flex-direction: column;
