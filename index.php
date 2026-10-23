@@ -63,7 +63,7 @@ $niveau = '';
         <a href="#actualites">Actualités</a>
     </section>
 
-    <section class="mise-a-action" id="mise-a-action">
+    <section class="mise-a-action flex" id="mise-a-action">
         <h2>Mise à l'action et sensibilisation</h2>
 
         <div class="mise-a-action__pourquoi">
@@ -79,6 +79,15 @@ $niveau = '';
         <p>Chaque espèce joue un rôle essentiel dans l’équilibre des écosystèmes. Leur protection, c’est préserver la
             biodiversité, la qualité de nos milieux naturels et notre patrimoine pour les générations futures
         </p>
+    </section>
+
+    <section class="statuts" id="statuts">
+        <h2>Statuts</h2>
+        
+        <ul class="statuts__liste">
+            <li class="statuts__liste__item"></li>
+            <li class="statuts__liste__item"></li>
+        </ul>
     </section>
 
 

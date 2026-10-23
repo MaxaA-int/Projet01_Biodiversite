@@ -1,110 +1,105 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 /* Typo, Components, Classes, CSS GÉNÉRAL */
 
 @layer settings {
-  @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
-  html {
-    box-sizing: border-box;
-  }
-
-  *,
-  *::before,
-  *::after {
-    box-sizing: inherit;
-  }
-
-  /*** Harmoniser le modèle de boîte avec Box-Sizing ***/
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
-
-  img {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  body {
-    font-family: "Open Sans", "Roboto", sans-serif;
-    font-optical-sizing: auto;
-  }
-
-  /* Stylisation des balises d'écriture */
-
-  /* STYLE DE BASE */
-
-  ul {
-    list-style-type: none;
-  }
-
-  /* États des boutons/liens généraux */
-
-  a.nav__link {
-    font-size: 0.8125rem;
-    font-weight: 600;
-    color: var(--Blanc);
-    text-decoration: none;
-
-    &:hover {
-      border-bottom: 1px solid var(--Blanc);
+    html {
+        box-sizing: border-box;
     }
 
-    &:focus {
-      border-bottom: 1px solid var(--Bleu-Clair);
+    *,
+    *::before,
+    *::after {
+        box-sizing: inherit;
     }
-  }
 
-  /* Affichage Minimum Tablette - 528px */
-  @media screen and (min-width: 33rem) {
-  }
+    /*** Harmoniser le modèle de boîte avec Box-Sizing ***/
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
 
-  /* Affichage Grosse Tablette - 768px */
-  @media screen and (min-width: 48.875rem) {
-  }
+    img {
+        width: 100%;
+        max-width: 100%;
+    }
 
-  /* Affichage Table - 1080px */
-  @media screen and (min-width: 67.5rem) {
+    body {
+        font-family: "Open Sans", "Roboto", sans-serif;
+        font-optical-sizing: auto;
+    }
+
+    /* Stylisation des balises d'écriture */
+    /* STYLE DE BASE */
+    ul {
+        list-style-type: none;
+    }
+
+    /* États des boutons/liens généraux */
     a.nav__link {
-      font-size: 1.125rem;
+        font-size: 0.8125rem;
+        font-weight: 600;
+        color: var(--Blanc);
+        text-decoration: none;
+
+        &:hover {
+            border-bottom: 1px solid var(--Blanc);
+        }
+
+        &:focus {
+            border-bottom: 1px solid var(--Bleu-Clair);
+        }
     }
-  }
 
-  /* Classes - Variables */
+    /* Affichage Minimum Tablette - 528px */
+    @media screen and (min-width: 33rem) {
+    }
 
-  .flex {
-    display: flex;
-  }
+    /* Affichage Grosse Tablette - 768px */
+    @media screen and (min-width: 48.875rem) {
+    }
 
-  .display-none {
-    display: none;
-  }
+    /* Affichage Table - 1080px */
+    @media screen and (min-width: 67.5rem) {
+        a.nav__link {
+            font-size: 1.125rem;
+        }
+    }
 
-  /* ACCESSIBILITÉ */
+    /* Classes - Variables */
+    .flex {
+        display: flex;
+    }
 
-  .screen-reader-only,
-  .visually-hidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-  }
+    .display-none {
+        display: none;
+    }
 
-  .screen-reader-only.focusable:active,
-  .screen-reader-only.focusable:focus,
-  .visually-hidden.focusable:active,
-  .visually-hidden.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
-  }
+    /* ACCESSIBILITÉ */
+    .screen-reader-only,
+    .visually-hidden {
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+    .screen-reader-only.focusable:active,
+    .screen-reader-only.focusable:focus,
+    .visually-hidden.focusable:active,
+    .visually-hidden.focusable:focus {
+        clip: auto;
+        height: auto;
+        margin: 0;
+        overflow: visible;
+        position: static;
+        width: auto;
+    }
 }
