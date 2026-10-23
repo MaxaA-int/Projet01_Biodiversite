@@ -54,7 +54,7 @@ $niveau = '';
     <section class="table-des-matieres__containeur flex">
 
         <div class="table-des-matieres__titre flex">
-            <p>Table des matières</p>
+            <p class="fs16px">Table des matières</p>
         </div>
 
         <a href="#mise-a-action">Mise à l'action</a>
@@ -66,7 +66,7 @@ $niveau = '';
     <section class="mise-a-action flex" id="mise-a-action">
         <h2>Mise à l'action et sensibilisation</h2>
 
-        <div class="mise-a-action__pourquoi">
+        <div class="mise-a-action__pourquoi fs16px">
             <p>Pourquoi protéger ces espèces ?</p>
             <ul>
                 <li>Des écosystèmes de santé</li>
@@ -76,18 +76,33 @@ $niveau = '';
 
         </div>
 
-        <p>Chaque espèce joue un rôle essentiel dans l’équilibre des écosystèmes. Leur protection, c’est préserver la
-            biodiversité, la qualité de nos milieux naturels et notre patrimoine pour les générations futures
+        <p class="fs16px">Chaque espèce joue un rôle essentiel dans l’équilibre des écosystèmes. Leur protection, c’est préserver la
+            biodiversité, la qualité de nos milieux naturels et notre patrimoine pour les générations futures.
         </p>
     </section>
 
     <section class="statuts" id="statuts">
         <h2>Statuts</h2>
-        
-        <ul class="statuts__liste">
-            <li class="statuts__liste__item"></li>
-            <li class="statuts__liste__item"></li>
+
+        <ul class="statuts__liste flex">
+            <li class="statuts__liste__item flex">
+                <p>Menacé :</p>
+                <p class="fs16px">espèce, sous-espèce ou population dont la disparition est redoutée.</p>
+                <button class="qc-button qc-secondary">Voir les espèces menacées</button>
+            </li>
+
+            <li class="statuts__liste__item flex">
+                <p>Vulnérable :</p>
+                <p class="fs16px">espèce, sous-espèce ou population dont la survie est jugée précaire. Sa disparition n’est pas
+                    redoutée à court ou à moyen terme
+                </p>
+                <button class="qc-button qc-secondary">Voir les espèces vulnérables</button>
+            </li>
         </ul>
+    </section>
+
+    <section class="especes-decouvrir" id="especes-decouvrir">
+        <h2>Espèces à découvrir</h2>
     </section>
 
 
