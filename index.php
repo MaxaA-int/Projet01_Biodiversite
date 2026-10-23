@@ -12,6 +12,7 @@ $niveau = '';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>Accueil - Biodiversité</title>
 
     <?php
@@ -76,7 +77,8 @@ $niveau = '';
 
         </div>
 
-        <p class="fs16px">Chaque espèce joue un rôle essentiel dans l’équilibre des écosystèmes. Leur protection, c’est préserver la
+        <p class="fs16px">Chaque espèce joue un rôle essentiel dans l’équilibre des écosystèmes. Leur protection, c’est
+            préserver la
             biodiversité, la qualité de nos milieux naturels et notre patrimoine pour les générations futures.
         </p>
     </section>
@@ -93,7 +95,8 @@ $niveau = '';
 
             <li class="statuts__liste__item flex">
                 <p>Vulnérable :</p>
-                <p class="fs16px">espèce, sous-espèce ou population dont la survie est jugée précaire. Sa disparition n’est pas
+                <p class="fs16px">espèce, sous-espèce ou population dont la survie est jugée précaire. Sa disparition
+                    n’est pas
                     redoutée à court ou à moyen terme
                 </p>
                 <button class="qc-button qc-secondary">Voir les espèces vulnérables</button>
