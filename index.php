@@ -2,7 +2,21 @@
 
 $niveau = '';
 
-// include($niveau . 'assets/inc/config.inc.php');
+include($niveau . 'assets/inc/config.inc.php');
+
+$strRequete = 'SELECT DISTINCT especes.*, groupes.nom_groupe, images.nom_image 
+                FROM especes
+                INNER JOIN groupes ON especes.groupe_id = groupes.id 
+                INNER JOIN images ON especes.id = images.espece_id
+                WHERE nom_image LIKE "IMG_%"
+                ORDER BY RAND()
+                LIMIT 4';
+
+$pdosResultat = $pdoConnexion->prepare($strRequete);
+$pdosResultat->execute();
+$arrEspecesDecouvrir = $pdosResultat->fetchAll();
+
+$pdosResultat->closeCursor();
 
 ?>
 <!doctype html>
@@ -103,8 +117,16 @@ $niveau = '';
         </ul>
     </section>
 
-    <section class="especes-decouvrir" id="especes-decouvrir">
+    <section class="especes-decouvrir flex" id="especes-decouvrir">
         <h2>Espèces à découvrir</h2>
+
+        <ul class="espece-decouvrir__liste flex">
+            <li class="espece-decouvrir__item">
+                <img src="assets/img/IMG_Rorqual-commun_fredklus-melccfp.jpg" alt="Rorqual Commun" />
+                <p>Rorqual Commun</p>
+                <button class="qc-button qc-secondary">Voir la fiche</button>
+            </li>
+        </ul>
     </section>
 
 
