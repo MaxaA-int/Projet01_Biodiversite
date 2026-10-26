@@ -107,7 +107,28 @@
         margin: 0 auto;
         flex-direction: column;
 
+        .especes-decouvrir__liste {
+            flex-direction: column;
 
+            .especes-decouvrir__item {
+                flex-direction: column;
+                justify-items: center;
+                text-align: center;
+                gap: 1rem;
+                border: 1px solid var(--Bleu-Fonce);
+                padding: 2rem;
+
+                p {
+                    font-size: 1.25rem;
+                    font-weight: 700;
+                    margin: 0;
+                }
+
+                button {
+                    margin: 0;
+                }
+            }
+        }
 
     }
 }

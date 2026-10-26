@@ -4,6 +4,7 @@ $niveau = '';
 
 include($niveau . 'assets/inc/config.inc.php');
 
+/* Requête pour avoir 4 espèces aléatoires */
 $strRequete = 'SELECT DISTINCT especes.*, groupes.nom_groupe, images.nom_image 
                 FROM especes
                 INNER JOIN groupes ON especes.groupe_id = groupes.id 
@@ -120,12 +121,16 @@ $pdosResultat->closeCursor();
     <section class="especes-decouvrir flex" id="especes-decouvrir">
         <h2>Espèces à découvrir</h2>
 
-        <ul class="espece-decouvrir__liste flex">
-            <li class="espece-decouvrir__item">
-                <img src="assets/img/IMG_Rorqual-commun_fredklus-melccfp.jpg" alt="Rorqual Commun" />
-                <p>Rorqual Commun</p>
-                <button class="qc-button qc-secondary">Voir la fiche</button>
-            </li>
+        <ul class="especes-decouvrir__liste flex">
+            <?php
+                foreach ($arrEspecesDecouvrir as $espece) {
+                    echo "<li class='especes-decouvrir__item flex'>";
+                    echo "<img src='assets/img/$espece[nom_image]' alt='$espece[nom_francais]' />";
+                    echo "<p>$espece[nom_francais]</p>";
+                    echo "<button class='qc-button qc-secondary'>Voir la fiche</button>";
+                    echo "</li>";
+                }
+            ?>
         </ul>
     </section>
 
