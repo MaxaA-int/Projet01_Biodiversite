@@ -123,18 +123,37 @@ $pdosResultat->closeCursor();
 
         <ul class="especes-decouvrir__liste flex">
             <?php
-                foreach ($arrEspecesDecouvrir as $espece) {
-                    echo "<li class='especes-decouvrir__item flex'>";
-                    echo "<img src='assets/img/$espece[nom_image]' alt='$espece[nom_francais]' />";
-                    echo "<p>$espece[nom_francais]</p>";
-                    echo "<button class='qc-button qc-secondary'>Voir la fiche</button>";
-                    echo "</li>";
-                }
+            foreach ($arrEspecesDecouvrir as $espece) {
+                echo "<li class='especes-decouvrir__item flex'>";
+                echo "<img src='assets/img/$espece[nom_image]' alt='$espece[nom_francais]' />";
+                echo "<p>$espece[nom_francais]</p>";
+                echo "<button class='qc-button qc-secondary'>Voir la fiche</button>";
+                echo "</li>";
+            }
             ?>
         </ul>
+        <a class="flex" href="pages/especes/index.php">Découvrir davantage d'espèces</a>
     </section>
 
+    <section class="actualites" id="actualites">
+        <h2>Actualités</h2>
+        <ul class="actualites__liste flex">
+            <li class="actualites__item flex">
+                <img src="assets/img/IMG_Caribou-forestier_JoelleTaillon.jpg" alt="">
+                <p class="actualites__article-dates">07 Septembre 2026</p>
+                <h3 class="actualites__article-titre">Le caribou des bois : un plan de rétablissement renforcé pour les
+                    populations du Nord</h3>
+                <p class="actualites__article-desc">Le gouvernement du Québec annonce un investissement de 12 millions
+                    de dollars sur cinq ans pour protéger les dernières populations de caribous des bois dans les
+                    régions de Charlevoix et de la Côte-Nord, incluant la création de nouvelles zones de protection
+                    intégrale.</p>
+                <button class='qc-button qc-secondary'>Lire l'article</button>
+            </li>
+        </ul>
+        <a class="flex" href="pages/especes/index.php">Voir toutes les nouvelles</a>
+    </section>
 
+    <?php include($niveau . "assets/inc/fragments/bas-de-page.php") ?>
 </main>
 </body>
 
