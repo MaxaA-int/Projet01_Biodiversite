@@ -76,8 +76,9 @@ $pdosResultat->closeCursor();
 
 </main>
 
-
-
+<footer class="footer">
+    <?php include($niveau . "assets/inc/fragments/bas-de-page.php") ?>
+</footer>
 
 </body>
 
