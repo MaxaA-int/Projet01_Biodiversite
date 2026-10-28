@@ -153,8 +153,11 @@ $pdosResultat->closeCursor();
         <a class="flex" href="pages/especes/index.php">Voir toutes les nouvelles</a>
     </section>
 
-    <?php include($niveau . "assets/inc/fragments/bas-de-page.php") ?>
 </main>
+
+<footer class="footer">
+    <?php include($niveau . "assets/inc/fragments/bas-de-page.php") ?>
+</footer>
 </body>
 
 </html>
