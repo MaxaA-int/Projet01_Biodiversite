@@ -39,7 +39,7 @@ $pdosResultat->closeCursor();
 <header class="entete">
     <?php include($niveau . "assets/inc/fragments/navigation.php") ?>
 
-    <div class="banniere-hero__containeur">
+    <div class="banniere-hero__containeur flex">
         <picture class="banniere-hero__img">
             <source
                     srcset="
@@ -81,20 +81,28 @@ $pdosResultat->closeCursor();
     <section class="mise-a-action flex" id="mise-a-action">
         <h2>Mise à l'action et sensibilisation</h2>
 
-        <div class="mise-a-action__pourquoi fs16px">
-            <p>Pourquoi protéger ces espèces ?</p>
-            <ul>
-                <li>Des écosystèmes de santé</li>
-                <li>Une nature plus résiliente</li>
-                <li>Un patrimoine naturel unique</li>
-            </ul>
+        <ul class="mise-a-action__liste flex">
+            <li class="mise-a-action__item">
+                <div class="mise-a-action__pourquoi fs16px">
+                    <p>Pourquoi protéger ces espèces ?</p>
+                    <ul>
+                        <li>Des écosystèmes de santé</li>
+                        <li>Une nature plus résiliente</li>
+                        <li>Un patrimoine naturel unique</li>
+                    </ul>
 
-        </div>
+                </div>
+            </li>
+            <li class="mise-a-action__item">
+                <p class="fs16px">Chaque espèce joue un rôle essentiel dans l’équilibre des écosystèmes. Leur
+                    protection, c’est
+                    préserver la
+                    biodiversité, la qualité de nos milieux naturels et notre patrimoine pour les générations futures.
+                </p>
+            </li>
+        </ul>
 
-        <p class="fs16px">Chaque espèce joue un rôle essentiel dans l’équilibre des écosystèmes. Leur protection, c’est
-            préserver la
-            biodiversité, la qualité de nos milieux naturels et notre patrimoine pour les générations futures.
-        </p>
+
     </section>
 
     <section class="statuts" id="statuts">

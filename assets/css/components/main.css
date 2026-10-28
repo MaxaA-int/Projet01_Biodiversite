@@ -6,6 +6,8 @@
 
     main {
         padding-inline: 1rem;
+        max-width: 956px;
+        margin: 0 auto;
     }
 
     section {
@@ -18,7 +20,6 @@
 
     .table-des-matieres__containeur {
         width: 100%;
-        max-width: 768px;
         margin: 0 auto;
         padding-block: 2rem;
         color: var(--Blanc);
@@ -48,39 +49,44 @@
 
     .mise-a-action {
         width: 100%;
-        max-width: 768px;
         flex-direction: column;
 
-        .mise-a-action__pourquoi {
-            padding-block: 1rem;
+        .mise-a-action__liste {
+            flex-direction: column;
+            padding: 0;
 
-            p {
-                font-size: 1.125rem;
-                font-weight: 700;
-            }
+            .mise-a-action__pourquoi {
+                padding-block: 1rem;
 
-            ul {
-                margin: 0;
-
-                li {
-                    display: flex;
-                    align-items: center;
-                    gap: 1rem;
+                p {
+                    font-size: 1.125rem;
+                    font-weight: 700;
                 }
 
-                li:before {
-                    background-image: url(../../img/icons/checkmark.svg);
-                    content: "";
-                    display: inline-block;
-                    width: 30px;
-                    height: 30px;
-                    background-size: cover;
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    -webkit-background-size: cover;
+                ul {
+                    margin: 0;
+
+                    li {
+                        display: flex;
+                        align-items: center;
+                        gap: 1rem;
+                    }
+
+                    li:before {
+                        background-image: url(../../img/icons/checkmark.svg);
+                        content: "";
+                        display: inline-block;
+                        width: 30px;
+                        height: 30px;
+                        background-size: cover;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        -webkit-background-size: cover;
+                    }
                 }
             }
         }
+
     }
 
     .statuts {
@@ -104,7 +110,6 @@
 
     .especes-decouvrir {
         width: 100%;
-        max-width: 768px;
         margin: 0 auto;
         flex-direction: column;
 
@@ -204,6 +209,55 @@
             background-position: center;
             background-repeat: no-repeat;
             -webkit-background-size: cover;
+        }
+    }
+
+
+    /* Affichage Minimum Tablette - 528px */
+    @media screen and (min-width: 33rem) {
+
+    }
+
+    /* Affichage Grosse Tablette - 750px */
+    @media screen and (min-width: 48.875rem) {
+
+    }
+
+    /* Affichage Table - 1080px */
+    @media screen and (min-width: 67.5rem) {
+        main {
+
+            .mise-a-action {
+
+                .mise-a-action__liste {
+                    flex-direction: row;
+                    align-items: center;
+
+                    .mise-a-action__item {
+                        width: 100%;
+                    }
+                }
+            }
+
+            .statuts {
+
+                .statuts__liste {
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 2rem;
+                }
+            }
+
+            .especes-decouvrir {
+                .especes-decouvrir__liste {
+                    flex-direction: row;
+                    gap: 1.5rem;
+
+                    .especes-decouvrir__item {
+                        justify-content: space-between;
+                    }
+                }
+            }
         }
     }
 }
