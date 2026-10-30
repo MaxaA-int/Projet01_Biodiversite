@@ -19,6 +19,28 @@ $arrEspeces = $pdosResultat->fetchAll();
 
 $pdosResultat->closeCursor();
 
+/* Requete Liste des statuts des espèces */
+$strRequete = 'SELECT DISTINCT statut_LEMV AS nom
+                FROM especes
+                ORDER BY statut_LEMV';
+
+$pdosResultat = $pdoConnexion->prepare($strRequete);
+$pdosResultat->execute();
+$arrSatuts = $pdosResultat->fetchAll();
+
+$pdosResultat->closeCursor();
+
+/* Requete Liste des groupes des espèces */
+$strRequete = 'SELECT DISTINCT *
+                FROM groupes
+                ORDER BY nom_groupe';
+
+$pdosResultat = $pdoConnexion->prepare($strRequete);
+$pdosResultat->execute();
+$arrGroupes = $pdosResultat->fetchAll();
+
+$pdosResultat->closeCursor();
+
 ?>
 
 <!DOCTYPE html>
@@ -47,16 +69,39 @@ $pdosResultat->closeCursor();
     </div>
 
     <div class="main__contenus">
+
         <div class="main__especes-filtres">
-            <div class="especes-filtres__titre">
+            <div class="especes-filtres__titre flex">
                 <p>Filtres</p>
                 <p>-</p>
             </div>
 
             <div class="especes-filtres__statuts">
-                <input type="checkbox" value="Tous">
-                <input type="checkbox" value="Menacés">
-                <input type="checkbox" value="Vulnérables">
+                <p class="fs16px">Status</p>
+                <ul class="especes-filtres__liste flex">
+                    <li class='especes-filtres__item flex'><input type="checkbox" value="Tous" name="filtres-statuts">Tous</li>
+                    <?php
+                    foreach ($arrSatuts as $statut) {
+                        echo "<li class='especes-filtres__item flex'><input";
+                        echo " type='checkbox' value='$statut[nom]' name='filtres-statuts'>$statut[nom]s";
+                        echo "</li>";
+                    }
+                    ?>
+                </ul>
+            </div>
+
+            <div class="especes-filtres__groupes">
+                <p class="fs16px">Groupes</p>
+                <ul class="especes-filtres__liste flex">
+                    <li class='especes-filtres__item flex'><input type="checkbox" value="Tous" name="filtres-groupes">Tous</li>
+                    <?php
+                    foreach ($arrGroupes as $groupe) {
+                        echo "<li class='especes-filtres__item flex'><input";
+                        echo " type='checkbox' value='$groupe[nom_groupe]' name='filtres-groupes'>$groupe[nom_groupe]";
+                        echo "</li>";
+                    }
+                    ?>
+                </ul>
             </div>
 
         </div>
