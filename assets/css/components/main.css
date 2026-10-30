@@ -4,4 +4,388 @@
 
 @layer components {
 
+    main {
+        padding-inline: 1rem;
+        max-width: 956px;
+        margin: 0 auto;
+    }
+
+    section {
+        border-bottom: 1px solid var(--Gris);
+    }
+
+    .main__titre {
+        width: 100%;
+    }
+
+    .table-des-matieres__containeur {
+        width: 100%;
+        margin: 0 auto;
+        padding-block: 2rem;
+        color: var(--Blanc);
+
+        flex-direction: column;
+
+        .table-des-matieres__titre {
+            justify-content: space-between;
+            border-bottom: 1px solid var(--Gris-Clair);
+
+            p {
+                font-weight: 700;
+                margin: 0;
+                padding-block: 1rem;
+            }
+        }
+
+        a {
+            font-size: 14px;
+            font-weight: 400;
+            text-decoration: none;
+            border-bottom: 1px solid var(--Gris-Clair);
+            padding-block: 1rem;
+        }
+
+    }
+
+    .mise-a-action {
+        width: 100%;
+        flex-direction: column;
+
+        .mise-a-action__liste {
+            flex-direction: column;
+            padding: 0;
+
+            .mise-a-action__pourquoi {
+                padding-block: 1rem;
+
+                p {
+                    font-size: 1.125rem;
+                    font-weight: 700;
+                }
+
+                ul {
+                    margin: 0;
+
+                    li {
+                        display: flex;
+                        align-items: center;
+                        gap: 1rem;
+                    }
+
+                    li:before {
+                        background-image: url(../../img/icons/checkmark.svg);
+                        content: "";
+                        display: inline-block;
+                        width: 30px;
+                        height: 30px;
+                        background-size: cover;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        -webkit-background-size: cover;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .statuts {
+
+        .statuts__liste {
+            flex-direction: column;
+            padding: 0;
+
+            .statuts__liste__item {
+                align-items: center;
+                flex-direction: column;
+                text-align: center;
+
+                :first-child {
+                    font-size: 1.25rem;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+
+    .especes-decouvrir {
+        width: 100%;
+        margin: 0 auto;
+        flex-direction: column;
+
+        .especes-decouvrir__liste {
+            flex-direction: column;
+            padding: 0;
+
+            .especes-decouvrir__item {
+                flex-direction: column;
+                justify-items: center;
+                text-align: center;
+                gap: 1rem;
+                border: 1px solid var(--Bleu-Fonce);
+                padding: 2rem;
+
+                p {
+                    font-size: 1.25rem;
+                    font-weight: 700;
+                    margin: 0;
+                }
+
+                button {
+                    margin: 0;
+                }
+            }
+        }
+
+        a {
+            font-size: 1.125rem;
+            gap: 0.5rem;
+            justify-content: flex-start;
+            align-items: center;
+            border-top: 1px solid var(--Gris-Clair);
+            padding-block: 1rem;
+        }
+
+        a:after {
+            background-image: url(../../img/icons/right-arrow.svg);
+            content: "";
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            -webkit-background-size: cover;
+        }
+
+    }
+
+    .actualites {
+
+        .actualites__liste {
+            padding: 0;
+
+            .actualites__item {
+                flex-direction: column;
+                justify-items: center;
+                text-align: left;
+                gap: 1.5rem;
+                border: 1px solid var(--Bleu-Fonce);
+                padding: 2rem;
+
+                .actualites__article-dates {
+                    font-size: 14px;
+                    font-weight: 300;
+                    margin-block: 0.5rem;
+                }
+
+                h3 {
+                    margin: 0;
+                }
+
+                .actualites__article-desc {
+                    font-size: 1rem;
+
+                }
+            }
+        }
+
+        a {
+            font-size: 1.125rem;
+            gap: 0.5rem;
+            justify-content: flex-start;
+            align-items: center;
+            border-top: 1px solid var(--Gris-Clair);
+            padding-block: 1rem;
+        }
+
+        a:after {
+            background-image: url(../../img/icons/right-arrow.svg);
+            content: "";
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            -webkit-background-size: cover;
+        }
+    }
+
+    .main__contenus {
+
+    }
+
+    .main__especes-filtres {
+
+        p {
+            font-weight: 700;
+        }
+
+        .especes-filtres__titre {
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+            padding-left: 2rem;
+            font-size: 1.125rem;
+            padding-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 0.5rem;
+        }
+
+        ul {
+            flex-direction: column;
+
+            li {
+                margin: 0;
+                gap: 1rem;
+
+                label {
+                    font-weight: 400;
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        .especes-filtres__submit {
+            gap: 1rem;
+            flex-direction: column;
+
+            input {
+                background-color: white;
+                border: 2px solid var(--Bleu-Moyen);
+                color: var(--Bleu-Moyen);
+                font-size: 1.125rem;
+            }
+
+            a {
+                font-size: 1.125rem;
+            }
+        }
+    }
+
+    .main__liste-especes {
+
+        .liste-especes__containenur {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 1.5rem;
+            margin: 0 auto;
+            padding: 0;
+
+
+            .liste-especes__item {
+                flex-direction: column;
+                justify-content: space-between;
+                border: 1px solid var(--Bleu-Fonce);
+                padding: 2rem;
+                max-width: 100%;
+                gap: 1rem;
+
+                h3 {
+                    margin: 0;
+                }
+
+                p {
+                    margin: 0;
+                    font-size: 1rem;
+                }
+
+                .liste-especes__noms {
+                    flex-direction: column;
+                    gap: 0.3rem;
+                }
+
+                .liste-especes__appartenances {
+                    flex-direction: column;
+                    gap: 0.2rem;
+                }
+
+                button {
+                    margin: 1rem 0 0;
+                }
+            }
+        }
+    }
+
+
+    /* Affichage Minimum Tablette - 528px */
+    @media screen and (min-width: 33rem) {
+
+    }
+
+    /* Affichage Grosse Tablette - 750px */
+    @media screen and (min-width: 48.875rem) {
+
+    }
+
+    /* Affichage Table - 1080px */
+    @media screen and (min-width: 67.5rem) {
+        main {
+            max-width: 1220px;
+
+            .mise-a-action {
+
+                .mise-a-action__liste {
+                    flex-direction: row;
+                    align-items: center;
+
+                    .mise-a-action__item {
+                        width: 100%;
+                    }
+                }
+            }
+
+            .statuts {
+
+                .statuts__liste {
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 2rem;
+                }
+            }
+
+            .especes-decouvrir {
+                .especes-decouvrir__liste {
+                    flex-direction: row;
+                    gap: 1.5rem;
+
+                    .especes-decouvrir__item {
+                        justify-content: space-between;
+                    }
+                }
+            }
+
+            .main__contenus {
+                display: grid;
+                grid-template-columns: repeat(10, 1fr);
+                padding-block: 2rem;
+                gap: 1rem;
+
+                .main__especes-filtres {
+                    grid-column: 1 / 3;
+                    width: 100%;
+                }
+
+                .main__liste-especes {
+                    grid-column: 3 / -1;
+                    width: 100%;
+
+                    h1 {
+                        margin-top: 0;
+                    }
+
+                    .liste-especes__containenur {
+
+                        .liste-especes__item {
+                            width: 48%;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

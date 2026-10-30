@@ -4,4 +4,66 @@
 
 @layer components {
 
+    .footer {
+
+        .pied-de-page {
+            background-color: var(--Bleu-Moyen);
+            padding: 7rem 1rem;
+            color: white;
+
+            .pied-de-page__liste {
+                padding: 0;
+
+                .pied-de-page__item {
+
+                    ul {
+                        gap: 0.4rem;
+                        flex-direction: column;
+                    }
+
+                    a {
+                        font-size: 14px;
+                    }
+
+                    li {
+                        margin: 0;
+
+                        qc-external-link {
+                            gap: 0.5rem;
+                            justify-content: flex-start;
+                            align-items: center;
+                        }
+
+                    }
+
+                    qc-external-link:before {
+                        content: "";
+                        display: inline-block;
+                        width: 20px;
+                        height: 20px;
+                        background-size: cover;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        -webkit-background-size: cover;
+                    }
+
+                    li:nth-child(1) qc-external-link:before {
+                        background-image: url(../../img/icons/facebook.svg);
+                    }
+
+                    li:nth-child(2) qc-external-link:before {
+                        background-image: url(../../img/icons/x-twitter.svg);
+                    }
+
+                    li:nth-child(3) qc-external-link:before {
+                        background-image: url(../../img/icons/youtube.svg);
+                    }
+
+                    li:nth-child(4) qc-external-link:before {
+                        background-image: url(../../img/icons/instagram.svg);
+                    }
+                }
+            }
+        }
+    }
 }

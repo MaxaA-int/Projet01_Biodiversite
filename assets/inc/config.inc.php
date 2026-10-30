@@ -12,7 +12,7 @@ $strPassword = 'gabNmax07!?r';
 if ($blnLocal) {
     $strHost = 'localhost;port=8889';
     error_reporting(E_ALL);
-    
+
 } else {
     $strHost = 'timunix3.cegep-ste-foy.qc.ca';
     error_reporting(E_ALL & ~E_NOTICE);
