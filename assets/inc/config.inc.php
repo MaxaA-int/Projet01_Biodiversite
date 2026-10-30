@@ -10,7 +10,7 @@ $strUser = '26_scriptCase';
 $strPassword = 'gabNmax07!?r';
 
 if ($blnLocal) {
-    $strHost = 'localhost';
+    $strHost = 'localhost;port=8889';
     error_reporting(E_ALL);
 
 } else {
