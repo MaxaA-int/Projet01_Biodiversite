@@ -10,7 +10,8 @@ $strRequete = 'SELECT DISTINCT especes.*, groupes.nom_groupe, images.nom_image
                 INNER JOIN groupes ON especes.groupe_id = groupes.id 
                 INNER JOIN images ON especes.id = images.espece_id
                 WHERE nom_image LIKE "IMG_%"
-                ORDER BY nom_francais';
+                ORDER BY nom_francais
+                LIMIT 5';
 
 $pdosResultat = $pdoConnexion->prepare($strRequete);
 $pdosResultat->execute();
@@ -40,39 +41,60 @@ $pdosResultat->closeCursor();
 
 <?php include($niveau . "assets/inc/fragments/navigation.php") ?>
 
-<main>
+<main class="main">
     <div class="fil-arianne">
         <p>fil d'arianne</p>
     </div>
 
-    <h1>Liste des espèces</h1>
+    <div class="main__contenus">
+        <div class="main__especes-filtres">
+            <div class="especes-filtres__titre">
+                <p>Filtres</p>
+                <p>-</p>
+            </div>
 
-    <form action="index.php" method="post">
-        <qc-search-bar name="tx_solr[q]"></qc-search-bar>
-    </form>
+            <div class="especes-filtres__statuts">
+                <input type="checkbox" value="Tous">
+                <input type="checkbox" value="Menacés">
+                <input type="checkbox" value="Vulnérables">
+            </div>
 
-    <ul class="liste-especes__containenur">
-        <?php
-        foreach ($arrEspeces as $espece) {
-            echo "<li class='liste-especes__item'>";
+        </div>
 
-            echo '<img src=' . $niveau . "assets/img/$espece[nom_image] alt=$espece[nom_francais]'>";
+        <div class="main__liste-especes">
+            <h1>Liste des espèces</h1>
 
-            echo "<div class='liste-especes__noms'>";
-            echo "<h3>$espece[nom_francais]</h3>";
-            echo "<p>$espece[nom_scientifique]</p>";
-            echo "</div>";
+            <form action="index.php" method="post">
+                <qc-search-bar name="tx_solr[q]"></qc-search-bar>
+            </form>
 
-            echo "<div class='liste-especes__appartenances'>";
-            echo "<p>Groupe : $espece[nom_groupe]</p>";
-            echo "<p>Statut : $espece[statut_LEMV]</p>";
-            echo "</div>";
-            echo "</li>";
+            <ul class="liste-especes__containenur flex">
+                <?php
+                foreach ($arrEspeces as $espece) {
+                    echo "<li class='liste-especes__item flex'>";
+
+                    echo '<img src=' . $niveau . "assets/img/$espece[nom_image] alt=$espece[nom_francais]'>";
+
+                    echo "<div class='liste-especes__noms flex'>";
+                    echo "<h3>$espece[nom_francais]</h3>";
+                    echo "<p>$espece[nom_scientifique]</p>";
+                    echo "</div>";
+
+                    echo "<div class='liste-especes__appartenances flex'>";
+                    echo "<p>Groupe : $espece[nom_groupe]</p>";
+                    echo "<p class=''>Statut : $espece[statut_LEMV] </p>";
+                    echo "</div>";
+                    echo "<button class='qc-button qc-primary'>Voir la fiche complète</button>";
+                    echo "</li>";
 
 
-        }
-        ?>
-    </ul>
+                }
+                ?>
+                <button class='qc-button qc-primary'>Afficher plus d'espèces</button>
+            </ul>
+
+        </div>
+    </div>
 
 </main>
 

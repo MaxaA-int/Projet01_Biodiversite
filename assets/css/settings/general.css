@@ -55,13 +55,6 @@
         }
     }
 
-    button {
-        font-size: 1.125rem;
-        padding: 0 1rem;
-        max-width: 100%;
-        width: 100%;
-    }
-
     /* Affichage Minimum Tablette - 528px */
     @media screen and (min-width: 33rem) {
     }
@@ -88,6 +81,14 @@
 
     .fs16px {
         font-size: 1rem;
+    }
+
+    .vulnerable {
+        color: #CC711C;
+    }
+
+    .menace {
+        color: #CB381F;
     }
 
     /* ACCESSIBILITÉ */

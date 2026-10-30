@@ -212,6 +212,56 @@
         }
     }
 
+    .main__contenus {
+
+    }
+
+    .main__especes-fitlres {
+
+    }
+
+    .main__liste-especes {
+
+        .liste-especes__containenur {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 1.5rem;
+            margin: 0 auto;
+
+            .liste-especes__item {
+                flex-direction: column;
+                justify-content: space-between;
+                border: 1px solid var(--Bleu-Fonce);
+                padding: 2rem;
+                max-width: 100%;
+                gap: 1rem;
+
+                h3 {
+                    margin: 0;
+                }
+
+                .liste-especes__noms {
+                    flex-direction: column;
+                    gap: 0.3rem;
+                }
+
+                .liste-especes__appartenances {
+                    flex-direction: column;
+                    gap: 0.3rem;
+
+                    p {
+                        margin: 0;
+                    }
+                }
+
+                button {
+                    margin: 1rem 0 0;
+                }
+            }
+        }
+    }
+
 
     /* Affichage Minimum Tablette - 528px */
     @media screen and (min-width: 33rem) {
