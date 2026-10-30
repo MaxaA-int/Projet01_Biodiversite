@@ -38,6 +38,8 @@ $pdosResultat->closeCursor();
 
 $arrFiltres = array_merge($arrSatuts, $arrGroupes);
 
+$strFiltreSQL = `WHERE nom_image LIKE "IMG_%" `;
+
 /* Requete Liste des espèces et groupe */
 $strRequete = 'SELECT DISTINCT especes.*, groupes.nom_groupe, images.nom_image 
                 FROM especes
