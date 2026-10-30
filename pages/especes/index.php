@@ -4,20 +4,15 @@ $niveau = '../../';
 
 include($niveau . 'assets/inc/config.inc.php');
 
-/* Requete Liste des espèces et groupe */
-$strRequete = 'SELECT DISTINCT especes.*, groupes.nom_groupe, images.nom_image 
-                FROM especes
-                INNER JOIN groupes ON especes.groupe_id = groupes.id 
-                INNER JOIN images ON especes.id = images.espece_id
-                WHERE nom_image LIKE "IMG_%"
-                ORDER BY nom_francais
-                LIMIT 5';
+/* Fonctions */
+function ecrireChecked($p_valeurFiltre)
+{
+    return isset($_GET["filtre-$p_valeurFiltre"]) ? 'checked' : '';
+}
 
-$pdosResultat = $pdoConnexion->prepare($strRequete);
-$pdosResultat->execute();
-$arrEspeces = $pdosResultat->fetchAll();
+function verifierFiltres($p_valeurFiltre) {
 
-$pdosResultat->closeCursor();
+}
 
 /* Requete Liste des statuts des espèces */
 $strRequete = 'SELECT DISTINCT statut_LEMV AS nom
@@ -40,6 +35,24 @@ $pdosResultat->execute();
 $arrGroupes = $pdosResultat->fetchAll();
 
 $pdosResultat->closeCursor();
+
+$arrFiltres = array_merge($arrSatuts, $arrGroupes);
+
+/* Requete Liste des espèces et groupe */
+$strRequete = 'SELECT DISTINCT especes.*, groupes.nom_groupe, images.nom_image 
+                FROM especes
+                INNER JOIN groupes ON especes.groupe_id = groupes.id 
+                INNER JOIN images ON especes.id = images.espece_id
+                WHERE nom_image LIKE "IMG_%"
+                ORDER BY nom_francais
+                LIMIT 5';
+
+$pdosResultat = $pdoConnexion->prepare($strRequete);
+$pdosResultat->execute();
+$arrEspeces = $pdosResultat->fetchAll();
+
+$pdosResultat->closeCursor();
+
 
 ?>
 
@@ -76,34 +89,42 @@ $pdosResultat->closeCursor();
                 <p>-</p>
             </div>
 
-            <div class="especes-filtres__statuts">
-                <p class="fs16px">Status</p>
-                <ul class="especes-filtres__liste flex">
-                    <li class='especes-filtres__item flex'><input type="checkbox" value="Tous" name="filtres-statuts">Tous</li>
-                    <?php
-                    foreach ($arrSatuts as $statut) {
-                        echo "<li class='especes-filtres__item flex'><input";
-                        echo " type='checkbox' value='$statut[nom]' name='filtres-statuts'>$statut[nom]s";
-                        echo "</li>";
-                    }
-                    ?>
-                </ul>
-            </div>
+            <form action="index.php" method="GET">
+                <div class="especes-filtres__statuts">
+                    <p class="fs16px">Statut</p>
+                    <ul class="especes-filtres__liste flex">
+                        <?php
+                        foreach ($arrSatuts as $statut) {
+                            echo "<li class='especes-filtres__item flex'><input";
+                            echo " type='checkbox' id='filtre-$statut[nom]' value='$statut[nom]' name='filtre-$statut[nom]'";
+                            echo ecrireChecked($statut['nom']) . ">";
+                            echo "<label for='filtre-$statut[nom]'>$statut[nom]s";
+                            echo "</li>";
+                        }
+                        ?>
+                    </ul>
+                </div>
 
-            <div class="especes-filtres__groupes">
-                <p class="fs16px">Groupes</p>
-                <ul class="especes-filtres__liste flex">
-                    <li class='especes-filtres__item flex'><input type="checkbox" value="Tous" name="filtres-groupes">Tous</li>
-                    <?php
-                    foreach ($arrGroupes as $groupe) {
-                        echo "<li class='especes-filtres__item flex'><input";
-                        echo " type='checkbox' value='$groupe[nom_groupe]' name='filtres-groupes'>$groupe[nom_groupe]";
-                        echo "</li>";
-                    }
-                    ?>
-                </ul>
-            </div>
+                <div class="especes-filtres__groupes">
+                    <p class="fs16px">Groupe</p>
+                    <ul class="especes-filtres__liste flex">
+                        <?php
+                        foreach ($arrGroupes as $groupe) {
+                            echo "<li class='especes-filtres__item flex'><input";
+                            echo " type='checkbox' id='filtre-$groupe[nom_groupe]' value='$groupe[nom_groupe]' name='filtre-$groupe[nom_groupe]'";
+                            echo ecrireChecked($groupe['nom_groupe']) . ">";
+                            echo "<label for='filtre-$groupe[nom_groupe]'>$groupe[nom_groupe]";
+                            echo "</li>";
+                        }
+                        ?>
+                    </ul>
+                </div>
 
+                <div class="especes-filtres__submit flex">
+                    <input class='' type="submit" value="Appliquer les filtres" name="btn__appliquer-filtres">
+                    <a href="index.php">Réinitialiser les filtres</a>
+                </div>
+            </form>
         </div>
 
         <div class="main__liste-especes">

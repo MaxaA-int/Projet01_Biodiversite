@@ -241,6 +241,27 @@
             li {
                 margin: 0;
                 gap: 1rem;
+
+                label {
+                    font-weight: 400;
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        .especes-filtres__submit {
+            gap: 1rem;
+            flex-direction: column;
+
+            input {
+                background-color: white;
+                border: 2px solid var(--Bleu-Moyen);
+                color: var(--Bleu-Moyen);
+                font-size: 1.125rem;
+            }
+
+            a {
+                font-size: 1.125rem;
             }
         }
     }
@@ -342,6 +363,7 @@
                 display: grid;
                 grid-template-columns: repeat(10, 1fr);
                 padding-block: 2rem;
+                gap: 1rem;
 
                 .main__especes-filtres {
                     grid-column: 1 / 3;
