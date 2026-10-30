@@ -7,7 +7,7 @@ include($niveau . 'assets/inc/config.inc.php');
 $intIdEspece = intval($_GET['id_espece']);
 
 $strRequete =
-"SELECT especes.*, groupes.nom_groupe AS groupe_nom FROM especes 
+"SELECT especes.*, groupes.nom_groupe AS groupe_nom, groupes.id FROM especes 
 INNER JOIN groupes ON especes.groupe_id = groupes.id
 WHERE especes.id = $intIdEspece";
 
@@ -27,6 +27,17 @@ $pdosResultatImage = $pdoConnexion->query($strRequeteImage);
 
 $arrImage = $pdosResultatImage->fetch();
 $pdosResultatImage->closecursor();
+
+$strRequeteEspeceSim = "SELECT DISTINCT especes.id AS espece_id, especes.nom_francais AS nom, groupes.nom_groupe FROM groupes INNER JOIN especes ON groupes.id = especes.groupe_id WHERE especes.groupe_id = " . $arrEspeces['groupe_id'] . " AND especes.id != $intIdEspece ORDER BY rand() LIMIT 3";
+
+$pdosResultatEspeceSim = $pdoConnexion->query($strRequeteEspeceSim);
+
+$nbEspecesSim = $pdosResultatEspeceSim->rowCount();
+$arrEspecesSim = array();
+for ($cptSim = 0; $cptSim < $nbEspecesSim; $cptSim++) {
+    $arrEspecesSim[$cptSim] = $pdosResultatEspeceSim->fetch();
+}
+$pdosResultatEspeceSim->closeCursor();
 
 ?>
 
@@ -109,9 +120,9 @@ $pdosResultatImage->closecursor();
             <hr>
         <?php } ?>
             <h2>Espèce de même groupe</h2>
-            <?php for ($cptEspeceSim = 0; $cptEspeceSim < count($arrEspeces); $cptEspeceSim++) { ?>
+            <?php for ($cptEspeceSim = 0; $cptEspeceSim < count($arrEspecesSim); $cptEspeceSim++) { ?>
             <li>
-                <?php echo $arrEspeces['groupe_nom']; ?>
+                <a href="index.php?id_espece=<?php echo $arrEspecesSim[$cptEspeceSim]['espece_id']; ?>"><?php echo $arrEspecesSim[$cptEspeceSim]['nom']; ?></a>
             </li>
             <?php } ?>
     </ul>
