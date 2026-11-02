@@ -14,6 +14,8 @@ function verifierFiltres($p_valeurFiltre) {
 
 }
 
+$strFiltreSQL = "WHERE nom_image LIKE 'IMG_%' ";
+
 /* Requete Liste des statuts des espèces */
 $strRequete = 'SELECT DISTINCT statut_LEMV AS nom
                 FROM especes
@@ -24,6 +26,12 @@ $pdosResultat->execute();
 $arrSatuts = $pdosResultat->fetchAll();
 
 $pdosResultat->closeCursor();
+
+foreach ($arrSatuts as $statut) {
+    if (isset($_GET["filtre-$statut[nom]"])) {
+        $strFiltreSQL .= "AND statut_LEMV = '$statut[nom]' ";
+    }
+}
 
 /* Requete Liste des groupes des espèces */
 $strRequete = 'SELECT DISTINCT *
@@ -36,18 +44,19 @@ $arrGroupes = $pdosResultat->fetchAll();
 
 $pdosResultat->closeCursor();
 
-$arrFiltres = array_merge($arrSatuts, $arrGroupes);
-
-$strFiltreSQL = `WHERE nom_image LIKE "IMG_%" `;
+foreach ($arrGroupes as $groupe) {
+    if (isset($_GET["filtre-$groupe[nom_groupe]"])) {
+        $strFiltreSQL .= "AND nom_groupe = '$groupe[nom_groupe]' ";
+    }
+}
 
 /* Requete Liste des espèces et groupe */
-$strRequete = 'SELECT DISTINCT especes.*, groupes.nom_groupe, images.nom_image 
+$strRequete = "SELECT DISTINCT especes.*, groupes.nom_groupe, images.nom_image 
                 FROM especes
                 INNER JOIN groupes ON especes.groupe_id = groupes.id 
                 INNER JOIN images ON especes.id = images.espece_id
-                WHERE nom_image LIKE "IMG_%"
-                ORDER BY nom_francais
-                LIMIT 5';
+                $strFiltreSQL
+                ORDER BY nom_francais";
 
 $pdosResultat = $pdoConnexion->prepare($strRequete);
 $pdosResultat->execute();
@@ -80,7 +89,8 @@ $pdosResultat->closeCursor();
 
 <main class="main">
     <div class="fil-arianne">
-        <p>fil d'arianne</p>
+        <a href="<?php echo $niveau?>index.php">Accueil</a> <
+        <a href="index.php">Liste des espèces</a>
     </div>
 
     <div class="main__contenus">
@@ -115,7 +125,7 @@ $pdosResultat->closeCursor();
                             echo "<li class='especes-filtres__item flex'><input";
                             echo " type='checkbox' id='filtre-$groupe[nom_groupe]' value='$groupe[nom_groupe]' name='filtre-$groupe[nom_groupe]'";
                             echo ecrireChecked($groupe['nom_groupe']) . ">";
-                            echo "<label for='filtre-$groupe[nom_groupe]'>$groupe[nom_groupe]";
+                            echo "<label for='filtre-$groupe[nom_groupe]'>$groupe[nom_groupe]</label>";
                             echo "</li>";
                         }
                         ?>
@@ -141,7 +151,7 @@ $pdosResultat->closeCursor();
                 foreach ($arrEspeces as $espece) {
                     echo "<li class='liste-especes__item flex'>";
 
-                    echo '<img src=' . $niveau . "assets/img/$espece[nom_image] alt=$espece[nom_francais]'>";
+                    echo '<img src=' . $niveau . "assets/img/$espece[nom_image] alt=$espece[nom_francais]>";
 
                     echo "<div class='liste-especes__noms flex'>";
                     echo "<h3>$espece[nom_francais]</h3>";
@@ -152,7 +162,8 @@ $pdosResultat->closeCursor();
                     echo "<p>Groupe : $espece[nom_groupe]</p>";
                     echo "<p class=''>Statut : $espece[statut_LEMV] </p>";
                     echo "</div>";
-                    echo "<button class='qc-button qc-primary'>Voir la fiche complète</button>";
+
+                    echo "<a href='fiche/index.php?id_espece=$espece[id]'>Voir la fiche</a>";
                     echo "</li>";
 
 

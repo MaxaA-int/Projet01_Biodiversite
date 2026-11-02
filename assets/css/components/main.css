@@ -10,6 +10,10 @@
         margin: 0 auto;
     }
 
+    .fil-arianne {
+        font-size: 12px;
+    }
+
     section {
         border-bottom: 1px solid var(--Gris);
     }
