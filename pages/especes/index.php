@@ -10,8 +10,9 @@ function ecrireChecked($p_valeurFiltre)
     return isset($_GET["filtre-$p_valeurFiltre"]) ? 'checked' : '';
 }
 
-function verifierFiltres($p_valeurFiltre) {
-
+function ajouterClasseStatut($p_classe)
+{
+    return ($p_classe === "Vulnérable") ? 'vulnerable ' : 'menace';
 }
 
 $strFiltreSQL = "WHERE nom_image LIKE 'IMG_%' ";
@@ -89,7 +90,7 @@ $pdosResultat->closeCursor();
 
 <main class="main">
     <div class="fil-arianne">
-        <a href="<?php echo $niveau?>index.php">Accueil</a> <
+        <a href="<?php echo $niveau ?>index.php">Accueil</a> <
         <a href="index.php">Liste des espèces</a>
     </div>
 
@@ -159,8 +160,8 @@ $pdosResultat->closeCursor();
                     echo "</div>";
 
                     echo "<div class='liste-especes__appartenances flex'>";
-                    echo "<p>Groupe : $espece[nom_groupe]</p>";
-                    echo "<p class=''>Statut : $espece[statut_LEMV] </p>";
+                    echo "<p class='couleurBleu'>Groupe : $espece[nom_groupe]</p>";
+                    echo "<p class='" . ajouterClasseStatut($espece['statut_LEMV']) . "'>Statut : $espece[statut_LEMV] </p>";
                     echo "</div>";
 
                     echo "<a href='fiche/index.php?id_espece=$espece[id]'>Voir la fiche</a>";
@@ -169,8 +170,11 @@ $pdosResultat->closeCursor();
 
                 }
                 ?>
-                <button class='qc-button qc-primary'>Afficher plus d'espèces</button>
             </ul>
+
+            <div class="liste-especes__boutonAffichage flex">
+                <button class='qc-button qc-primary'>Afficher plus d'espèces</button>
+            </div>
 
         </div>
     </div>

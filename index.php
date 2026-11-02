@@ -4,6 +4,18 @@ $niveau = '';
 
 include($niveau . 'assets/inc/config.inc.php');
 
+/* Fonctions */
+function tronquerTexteActualite($p_article)
+{
+    $arrTexteArticle = explode(' ', $p_article);
+
+    if (count($arrTexteArticle) > 45) {
+        array_splice($arrTexteArticle, 45, count($arrTexteArticle));
+    }
+
+    return implode(' ', $arrTexteArticle);
+}
+
 /* Requête pour avoir 4 espèces aléatoires */
 $strRequete = 'SELECT DISTINCT especes.*, groupes.nom_groupe, images.nom_image 
                 FROM especes
@@ -16,6 +28,16 @@ $strRequete = 'SELECT DISTINCT especes.*, groupes.nom_groupe, images.nom_image
 $pdosResultat = $pdoConnexion->prepare($strRequete);
 $pdosResultat->execute();
 $arrEspecesDecouvrir = $pdosResultat->fetchAll();
+
+$pdosResultat->closeCursor();
+
+/* Requête pour avoir les actualités */
+$strRequete = "SELECT *
+                FROM actualites";
+
+$pdosResultat = $pdoConnexion->prepare($strRequete);
+$pdosResultat->execute();
+$arrActualites = $pdosResultat->fetchAll();
 
 $pdosResultat->closeCursor();
 
@@ -146,17 +168,26 @@ $pdosResultat->closeCursor();
     <section class="actualites" id="actualites">
         <h2>Actualités</h2>
         <ul class="actualites__liste flex">
-            <li class="actualites__item flex">
-                <img src="assets/img/IMG_Caribou-forestier_JoelleTaillon.jpg" alt="">
-                <p class="actualites__article-dates">07 Septembre 2026</p>
-                <h3 class="actualites__article-titre">Le caribou des bois : un plan de rétablissement renforcé pour les
-                    populations du Nord</h3>
-                <p class="actualites__article-desc">Le gouvernement du Québec annonce un investissement de 12 millions
-                    de dollars sur cinq ans pour protéger les dernières populations de caribous des bois dans les
-                    régions de Charlevoix et de la Côte-Nord, incluant la création de nouvelles zones de protection
-                    intégrale.</p>
-                <button class='qc-button qc-secondary'>Lire l'article</button>
-            </li>
+            <?php
+            foreach ($arrActualites as $actualite) {
+                echo "<li class='actualites__item flex'>";
+
+//                echo "<figure>";
+                echo "<img src='assets/img/photos-actualites/$actualite[id].jpeg' alt='Image de $actualite[titre]>";
+//                echo "<figcaption>$actualite[credit_photo]</figcaption>";
+//                echo "</figure>";
+
+                echo "<p class='actualites__article-dates'>$actualite[date], $actualite[auteur]</p>";
+                echo "<h3 class='actualites__article-titre'>$actualite[titre]</h3>";
+                echo "<p class='actualites__article-desc fs16px'>" . tronquerTexteActualite($actualite['texte']);
+                        if (count(explode(" ", $actualite['texte'])) >= 45) {
+                            echo " <a href='#'>...</a>";
+                        }
+                        echo "</p>";
+                echo "<button class='qc-button qc-secondary'>Lire l'article</button>";
+                echo "</li>";
+            }
+            ?>
         </ul>
         <a class="flex" href="pages/especes/index.php">Voir toutes les nouvelles</a>
     </section>

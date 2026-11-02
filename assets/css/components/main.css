@@ -168,6 +168,7 @@
 
         .actualites__liste {
             padding: 0;
+            flex-direction: column;
 
             .actualites__item {
                 flex-direction: column;
@@ -363,6 +364,22 @@
                 }
             }
 
+            .actualites {
+
+                .actualites__liste {
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: space-around;
+                    gap: 2rem;
+                    width: 100%;
+
+                    .actualites__item {
+                        width: 48%;
+                        justify-content: space-between;
+                    }
+                }
+            }
+
             .main__contenus {
                 display: grid;
                 grid-template-columns: repeat(10, 1fr);
@@ -387,6 +404,12 @@
                         .liste-especes__item {
                             width: 48%;
                         }
+                    }
+
+                    .liste-especes__boutonAffichage {
+                        width: 100%;
+                        justify-content: center;
+                        padding-top: 1rem;
                     }
                 }
             }

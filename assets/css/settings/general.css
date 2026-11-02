@@ -83,6 +83,10 @@
         font-size: 1rem;
     }
 
+    .couleurBleu {
+        color: var(--Bleu-Moyen);
+    }
+
     .vulnerable {
         color: #CC711C;
     }
