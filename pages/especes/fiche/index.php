@@ -7,7 +7,7 @@ include($niveau . 'assets/inc/config.inc.php');
 $intIdEspece = intval($_GET['id_espece']);
 
 $strRequete =
-    "SELECT especes.*, groupes.nom_groupe AS groupe_nom, groupes.id FROM especes 
+    "SELECT especes.*, especes.id AS espece_id, groupes.nom_groupe AS groupe_nom, groupes.id FROM especes 
 INNER JOIN groupes ON especes.groupe_id = groupes.id
 WHERE especes.id = $intIdEspece";
 
@@ -65,7 +65,7 @@ $pdosResultatEspeceSim->closeCursor();
             <
                 <a href="<?php echo $niveau ?>pages/especes/index.php">Liste des espèces</a>
                 <
-                    <a href="index.php"><?php echo $arrEspeces['nom_francais'] ?></a>
+                    <a href="index.php?id_espece=<?php echo $arrEspeces['espece_id'] ?>"><?php echo $arrEspeces['nom_francais'] ?></a>
         </div>
 
         <section class="table-des-matieres__containeur flex">
