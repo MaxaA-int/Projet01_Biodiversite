@@ -58,6 +58,7 @@ foreach ($arrGroupes as $groupe) {
 }
 
 /* REQUETE PAGINATION */
+//COUNT(DISTINCT especes.id)
 $strRequete = "SELECT DISTINCT especes.*, groupes.nom_groupe, images.nom_image 
                 FROM especes
                 INNER JOIN groupes ON especes.groupe_id = groupes.id 
@@ -72,6 +73,8 @@ $nbEspeces = $nbTotalEspeces['id'];
 $pdosResultat->closeCursor();
 $nbPages = ceil($nbEspeces / $nbMaxEspecesPage);
 var_dump($nbPages);
+//var_dump($nbEspeces);
+//var_dump($nbTotalEspeces);
 
 /* Requete Liste des espèces et groupe */
 $strRequete = "SELECT DISTINCT especes.*, groupes.nom_groupe, images.nom_image 
@@ -199,19 +202,7 @@ $pdosResultat->closeCursor();
 
             ?>
 
-            <div class="ctn__pages">
-
-                <form action="index.php">
-                    <?php
-                    foreach ($arrSatuts as $statut) {
-                        if (isset($_GET["filtre-$statut[nom]"])) {
-                            echo "<input type='hidden' name='filtre-$statut[nom]' value='$statut[nom]'>";
-                        }
-                    }
-                    ?>
-                    <button type="submit">Allo</button>
-                </form>
-
+            <div class="ctn__pages flex">
                 <?php
                 if ($intIdPage > 0) {
                     echo "<form action='index.php?' method='get'>";
