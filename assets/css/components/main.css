@@ -172,7 +172,8 @@
 
             .actualites__item {
                 flex-direction: column;
-                justify-items: center;
+                justify-content: center;
+                align-items: center;
                 text-align: left;
                 gap: 1.5rem;
                 border: 1px solid var(--Bleu-Fonce);
@@ -370,12 +371,18 @@
                     flex-direction: row;
                     flex-wrap: wrap;
                     justify-content: space-around;
-                    gap: 2rem;
+                    gap: 1rem;
                     width: 100%;
+                    max-width: 100%;
 
                     .actualites__item {
                         width: 48%;
                         justify-content: space-between;
+                        gap: 0.5rem;
+
+                        h3 {
+                            font-size: 28px;
+                        }
                     }
                 }
             }

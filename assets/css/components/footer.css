@@ -5,14 +5,22 @@
 @layer components {
 
     .footer {
+        padding-top: 2rem;
+        width: 100%;
 
         .pied-de-page {
             background-color: var(--Bleu-Moyen);
             padding: 7rem 1rem;
             color: white;
 
+            .ctn__pied-de-page {
+                margin: 0 auto;
+                max-width: 1200px;
+            }
+
             .pied-de-page__liste {
                 padding: 0;
+                flex-direction: column;
 
                 .pied-de-page__item {
 
@@ -61,6 +69,29 @@
 
                     li:nth-child(4) qc-external-link:before {
                         background-image: url(../../img/icons/instagram.svg);
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 67.5rem) {
+        footer {
+
+            .pied-de-page {
+
+                .ctn__pied-de-page {
+
+
+                    .pied-de-page__liste {
+                        flex-direction: row;
+                        justify-content: left;
+                        align-items: flex-start;
+                        gap: 10rem;
+
+                        .pied-de-page__item {
+
+                        }
                     }
                 }
             }

@@ -134,7 +134,10 @@ $pdosResultat->closeCursor();
             <li class="statuts__liste__item flex">
                 <p>Menacé :</p>
                 <p class="fs16px">espèce, sous-espèce ou population dont la disparition est redoutée.</p>
-                <button class="qc-button qc-secondary">Voir les espèces menacées</button>
+                <form action="pages/especes/index.php?" method="get">
+                    <input type="hidden" name="filtre-Menacée" value="Menacée">
+                    <button class="qc-button qc-secondary">Voir les espèces menacées</button>
+                </form>
             </li>
 
             <li class="statuts__liste__item flex">
@@ -143,7 +146,11 @@ $pdosResultat->closeCursor();
                     n’est pas
                     redoutée à court ou à moyen terme
                 </p>
-                <button class="qc-button qc-secondary">Voir les espèces vulnérables</button>
+
+                <form action="pages/especes/index.php?" method="get">
+                    <input type="hidden" name="filtre-Vulnérable" value="Vulnérable">
+                    <button class="qc-button qc-secondary" type="submit">Voir les espèces vulnérables</button>
+                </form>
             </li>
         </ul>
     </section>
@@ -157,7 +164,10 @@ $pdosResultat->closeCursor();
                 echo "<li class='especes-decouvrir__item flex'>";
                 echo "<img src='assets/img/$espece[nom_image]' alt='$espece[nom_francais]' />";
                 echo "<p>$espece[nom_francais]</p>";
+                echo "<form action='pages/especes/fiche/index.php?' method='get'>";
+                echo "<input type='hidden' name='id_espece' value='$espece[id]'>";
                 echo "<button class='qc-button qc-secondary'>Voir la fiche</button>";
+                echo "</form>";
                 echo "</li>";
             }
             ?>
@@ -180,16 +190,16 @@ $pdosResultat->closeCursor();
                 echo "<p class='actualites__article-dates'>$actualite[date], $actualite[auteur]</p>";
                 echo "<h3 class='actualites__article-titre'>$actualite[titre]</h3>";
                 echo "<p class='actualites__article-desc fs16px'>" . tronquerTexteActualite($actualite['texte']);
-                        if (count(explode(" ", $actualite['texte'])) >= 45) {
-                            echo " <a href='#'>...</a>";
-                        }
-                        echo "</p>";
+                if (count(explode(" ", $actualite['texte'])) >= 45) {
+                    echo " <a href='#'>...</a>";
+                }
+                echo "</p>";
                 echo "<button class='qc-button qc-secondary'>Lire l'article</button>";
                 echo "</li>";
             }
             ?>
         </ul>
-        <a class="flex" href="pages/especes/index.php">Voir toutes les nouvelles</a>
+        <a class="flex" href="#">Voir toutes les nouvelles</a>
     </section>
 
 </main>
