@@ -338,9 +338,13 @@
                 .mise-a-action__liste {
                     flex-direction: row;
                     align-items: center;
+                    max-width: 100%;
+                    justify-content: left;
+                    gap: 1rem;
 
                     .mise-a-action__item {
                         width: 100%;
+                        max-width: 33%;
                     }
                 }
             }
@@ -351,6 +355,7 @@
                     flex-direction: row;
                     align-items: center;
                     gap: 2rem;
+                    max-width: 100%;
                 }
             }
 
@@ -358,6 +363,7 @@
                 .especes-decouvrir__liste {
                     flex-direction: row;
                     gap: 1.5rem;
+                    max-width: 100%;
 
                     .especes-decouvrir__item {
                         justify-content: space-between;
