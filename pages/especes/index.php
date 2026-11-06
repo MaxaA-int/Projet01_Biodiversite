@@ -58,7 +58,6 @@ foreach ($arrGroupes as $groupe) {
 }
 
 /* REQUETE PAGINATION */
-//COUNT(DISTINCT especes.id)
 $strRequete = "SELECT DISTINCT especes.*, groupes.nom_groupe, images.nom_image 
                 FROM especes
                 INNER JOIN groupes ON especes.groupe_id = groupes.id 
@@ -68,13 +67,10 @@ $strRequete = "SELECT DISTINCT especes.*, groupes.nom_groupe, images.nom_image
 
 $pdosResultat = $pdoConnexion->prepare($strRequete);
 $pdosResultat->execute();
-$nbTotalEspeces = $pdosResultat->fetch();
-$nbEspeces = $nbTotalEspeces['id'];
+$nbTotalEspeces = $pdosResultat->fetchAll();
+$nbEspeces = count($nbTotalEspeces);
 $pdosResultat->closeCursor();
 $nbPages = ceil($nbEspeces / $nbMaxEspecesPage);
-var_dump($nbPages);
-//var_dump($nbEspeces);
-//var_dump($nbTotalEspeces);
 
 /* Requete Liste des espèces et groupe */
 $strRequete = "SELECT DISTINCT especes.*, groupes.nom_groupe, images.nom_image 
@@ -206,7 +202,7 @@ $pdosResultat->closeCursor();
                 <?php
                 if ($intIdPage > 0) {
                     echo "<form action='index.php?' method='get'>";
-                    echo "<input type='hidden' name='idPage' value='$intIdPage" . -1 . "'>";
+                    echo "<input type='hidden' name='idPage' value='" . $intIdPage - 1 . "'>";
                     foreach ($arrSatuts as $statut) {
                         if (isset($_GET["filtre-$statut[nom]"])) {
                             echo "<input type='hidden' name='filtre-$statut[nom]' value='$statut[nom]'>";
@@ -242,7 +238,7 @@ $pdosResultat->closeCursor();
 
                 if ($intIdPage < $nbPages - 1) {
                     echo "<form action='index.php?' method='get'>";
-                    echo "<input type='hidden' name='idPage' value='$intIdPage" . +1 . "'>";
+                    echo "<input type='hidden' name='idPage' value='" . $intIdPage + 1 . "'>";
                     foreach ($arrSatuts as $statut) {
                         if (isset($_GET["filtre-$statut[nom]"])) {
                             echo "<input type='hidden' name='filtre-$statut[nom]' value='$statut[nom]'>";
@@ -257,7 +253,7 @@ $pdosResultat->closeCursor();
                     echo "</form>";
                 }
 
-                echo "<br> Page " . $intIdPage + 1 . " de $nbPages";
+                echo "<br> Page $intIdPage de " . $nbPages - 1;
                 ?>
             </div>
 
