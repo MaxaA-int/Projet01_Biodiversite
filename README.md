@@ -10,7 +10,7 @@ La seconde partie "Mon processus" est à compléter individuellement.
 - [Présentation](#présentation)
   - [Capture écran](#capture-écran)
   - [Liens](#liens)
-  - [Disparition des tâches]()
+  - [Disparition des tâches](#dispatition-des-tâches)
 - [Mon processus](#mon-processus)
   - [Technologies utilisées](#technologies-utilisées)
   - [Ce que j'ai appris](#ce-ce-que-jai-appris)
@@ -77,19 +77,19 @@ espèces menacées.
 
 ### Technologies utilisées
 
-<span style="color:crimson">Max :</span>
+<span style="color:crimson">**Max :**</span>
 
 Dans ce projet, plusieurs technologies ont été utilisées afin de parvenir à un résultat concret. Il y a, certes, l'utilisation
 commune du HTML, CSS et Javascript, mais le PHP fait enfin son apparition ! De plus, L'utilisation du système de design du Québec
 est une nouveauté permettant d'améliorer nos compétences professionnelles.
 
-Gab :
+**Gab :**
 
 blablabla
 
 ### Ce que j'ai appris
 
-<span style="color:crimson">Max :</span>
+<span style="color:crimson">**Max :**</span>
 
 Grâce à ce projet, j'ai pu apprendre davantage ce merveilleux langage de programmation que j'ai surnommé : PHP.
 En continu avec les cours de programmation web et multimédia, ce projet a permis de renforcer mes connaissances et 
@@ -97,7 +97,7 @@ d'appliquer les enseignements dans divers contextes. De plus, j'ai pu expérimen
 j'avais très légèrement touché auparavant. Par exemple, en PHP, j'ai pu créer un système de filtrage. En CSS, j'ai pu 
 développer les propriétés `object-fit/position` afin de créer une bannière Hero.
 
-Gab : 
+**Gab :**
 
 balbalbal
 
@@ -105,12 +105,12 @@ balbalbal
 
 Pour mes prochains projets, je souhaite approfondir :
 
-<span style="color:crimson">Max :</span>
+<span style="color:crimson">**Max :**</span>
 
 Je souhaite continuer le renforcement des connaissances en PHP afin de m'habituer davantage. Je souhaite aussi 
 utiliser plus souvent les grilles CSS.
 
-Gab : 
+**Gab :** 
 
 aa
 
