@@ -80,7 +80,9 @@ $pdosResultat->closeCursor();
                 <h2>Comprendre.</h2>
                 <h2>Protéger.</h2>
             </div>
-            <button class="qc-button qc-primary">Découvrir les espèces menacées</button>
+            <form action="pages/especes/index.php" method="get">
+                <button class="qc-button qc-primary">Découvrir les espèces</button>
+            </form>
         </div>
     </div>
 </header>

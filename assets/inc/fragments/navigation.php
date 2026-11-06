@@ -1,11 +1,18 @@
 <qc-piv-header title-text="Objectif Biodiversité Québec" title-url="https://www.quebec.ca/"
-    alt-logo="Accédez à Québec.ca">
+               alt-logo="Accédez à Québec.ca">
     <nav slot="links" aria-label="Navigation PIV">
         <ul>
-            <li><a href="#fakeEnglish">English</a>
+            <li>
+                <a href="#">
+                    <img src="<?php echo $niveau?>/assets/img/icons/loupe.svg" alt="Effectuer une recherche">
+                </a>
             </li>
-            <li><a href="#">Nous joindre</a>
-            </li>
+            <div class="uti">
+                <li><a href="#fakeEnglish">English</a>
+                </li>
+                <li><a href="#">Nous joindre</a>
+                </li>
+            </div>
         </ul>
     </nav>
 </qc-piv-header>
@@ -17,7 +24,7 @@
 
             <li class="nav__list-item">
                 <a href="<?php echo $niveau ?>index.php" class="nav__link nav__link--active"
-                    aria-current="page">Accueil</a>
+                   aria-current="page">Accueil</a>
             </li>
 
             <li class="nav__list-item">

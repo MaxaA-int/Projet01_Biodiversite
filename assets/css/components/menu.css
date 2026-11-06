@@ -3,6 +3,22 @@
 /* CSS MENU (Navigation) */
 
 @layer components {
+    qc-piv-header {
+        nav {
+            ul {
+                flex-direction: row;
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+
+                img {
+                    width: 28px;
+                    height: 28px;
+                }
+            }
+        }
+    }
+
     .menu-principal__containeur {
         background-color: var(--Bleu-Fonce);
         margin: 0 auto;
@@ -122,11 +138,6 @@
                 height: 100%;
                 margin: 0 auto 0 50%;
                 padding: 2rem 0;
-
-                button {
-                    margin: 0;
-                    padding: 0;
-                }
             }
         }
     }
