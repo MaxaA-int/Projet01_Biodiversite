@@ -4,7 +4,7 @@
         <ul>
             <li>
                 <a href="#">
-                    <img src="<?php echo $niveau?>/assets/img/icons/loupe.svg" alt="Effectuer une recherche">
+                    <img src="<?php echo $niveau?>assets/img/icons/loupe.svg" alt="Effectuer une recherche">
                 </a>
             </li>
             <div class="uti">
