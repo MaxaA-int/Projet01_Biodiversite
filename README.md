@@ -1,43 +1,41 @@
-# Projet 1 - Objectif Biodiversité Québec
-
-La première partie est commune à l'équipe.
-La seconde partie "Mon processus" est à compléter individuellement.
-
-**Ceci est notre solution d'équipe pour le projet Objectif Biodiversité Québec.**
+# P1 - Objectif BioDiversité (2026)
 
 ## Sommaire
 
 - [Présentation](#présentation)
-  - [Capture écran](#capture-écran)
+  - [Description, principaux défis](#defis-du-projet)
   - [Liens](#liens)
-  - [Disparition des tâches](#dispatition-des-tâches)
+  - [Disparition des tâches](#disparition-des-tâches)
 - [Mon processus](#mon-processus)
   - [Technologies utilisées](#technologies-utilisées)
-  - [Ce que j'ai appris](#ce-ce-que-jai-appris)
-  - [Développement continu](#développement-continu)
-- [Auteur](#auteur)
+  - [Utilisation de l'IA](#utilisation-de-lia)
+- [Rapport de tests](#rapport-de-tests)
+  - [Les améliorations possibles](#les-améliorations-possibles)
+  - [Les tests qui restent à faire](#les-tests-qui-restent-à-faire)
+- [Bilan des apprentissages](#bilan-des-apprentissages)
+  - [Quels principaux apprentissages retenez-vous du projet Objectif Biodiversité Québec?](#quels-principaux-apprentissages-retenez-vous-du-projet-objectif-biodiversité-québec)
+  - [Développement continu : qu'avez-vous besoin d'améliorer ou d'approfondir?](#développement-continu)
+ 
+- [Commentaires sur le projet](#commentaires-sur-le-projet)
+  - [Le tableau de suivi dans Planner vous a-t-il été utile pour le suivi du projet? Comment pourrions-nous l’améliorer?](#le-tableau-de-suivi-dans-planner-vous-a-t-il-été-utile-pour-le-suivi-du-projet-comment-pourrions-nous-laméliorer)
+  - [Le déroulement des activités théoriques vs les activités de laboratoires vous sont-elles apparues adéquates?](#le-déroulement-des-activités-théoriques-vs-les-activités-de-laboratoires-vous-sont-elles-apparues-adéquates)
+  - [Avez-vous des commentaires critiques à émettre dans le but d’améliorer le déroulement et les apprentissages reliés à ce projet? etc.](#avez-vous-des-commentaires-critiques-à-émettre-dans-le-but-daméliorer-le-déroulement-et-les-apprentissages-reliés-à-ce-projet-etc)
+- [Auteur.re](#auteur)
 
 ## Présentation
 
-Projet Biodiversité Québec est un site internet comportant plusieurs espèces 
+### Description, principaux défis 
+Projet Biodiversité Québec est un site internet comportant plusieurs espèces
 en danger. Celles-ci sont considérées comme "vulnérables" ou "menacées". Ce
 site web permet alors de découvrir et d'en apprendre davantage sur ces pauvres
-espèces menacées.
+espèces menacées. Il fallait donc utiliser le PHP afin d'extraire les informations
+de la base de données dans notre code.
+ 
+### Liens 
+- [MaxaA-int - Projet01 Biodiversité](https://github.com/MaxaA-int/Projet01_Biodiversite)
+- [Timunix - scriptCase - Biodiversité](https://timunix3.csfoy.ca/~scriptCase/objectifBiodiversite/public/)
 
-### Capture écran
-
-![Accueil - Projet Biodiversité Québec](assets/img/_divers/captBio-01.png)
-
-![Liste des Espèces - Projet Biodiversité Québec](assets/img/_divers/captBio-02.png)
-
-![Fiche d'une espèce - Projet Biodiversité Québec](assets/img/_divers/captBio-03.png)
-
-### Liens
-
-- URL de la solution : [MaxaA-int - Projet01 Biodiversité](https://github.com/MaxaA-int/Projet01_Biodiversite)
-- URL du site en direct : [Timunix - scriptCase - Biodiversité](https://timunix3.csfoy.ca/~scriptCase/objectifBiodiversite/public/)
-
-### Dispatition des tâches
+### Disparition des tâches
 
 <span style="color:crimson">**Max :**</span>
 
@@ -71,7 +69,6 @@ espèces menacées.
 *Programmation / Intégration :*
 - Création complète de la page **Fiche d'une espèce - Table / Mobile**
 
-------
 
 ## Mon Processus
 
@@ -87,14 +84,25 @@ est une nouveauté permettant d'améliorer nos compétences professionnelles.
 
 blablabla
 
-### Ce que j'ai appris
+### Utilisation de l'IA 
+
+Voir les documents concernant l'utilisation de l'IA
+
+## Rapport de tests
+
+### Les améliorations possibles
+
+### Les tests qui restent à faire
+
+## Bilan des apprentissages
+### Quels principaux apprentissages retenez-vous du projet Objectif Biodiversité Québec? 
 
 <span style="color:crimson">**Max :**</span>
 
 Grâce à ce projet, j'ai pu apprendre davantage ce merveilleux langage de programmation que j'ai surnommé : PHP.
-En continu avec les cours de programmation web et multimédia, ce projet a permis de renforcer mes connaissances et 
+En continu avec les cours de programmation web et multimédia, ce projet a permis de renforcer mes connaissances et
 d'appliquer les enseignements dans divers contextes. De plus, j'ai pu expérimenter avec quelques notions CSS auquelles
-j'avais très légèrement touché auparavant. Par exemple, en PHP, j'ai pu créer un système de filtrage. En CSS, j'ai pu 
+j'avais très légèrement touché auparavant. Par exemple, en PHP, j'ai pu créer un système de filtrage. En CSS, j'ai pu
 développer les propriétés `object-fit/position` afin de créer une bannière Hero.
 
 **Gab :**
@@ -102,19 +110,23 @@ développer les propriétés `object-fit/position` afin de créer une bannière 
 balbalbal
 
 ### Développement continu
-
 Pour mes prochains projets, je souhaite approfondir :
 
 <span style="color:crimson">**Max :**</span>
 
-Je souhaite continuer le renforcement des connaissances en PHP afin de m'habituer davantage. Je souhaite aussi 
+Je souhaite continuer le renforcement des connaissances en PHP afin de m'habituer davantage. Je souhaite aussi
 utiliser plus souvent les grilles CSS.
 
-**Gab :** 
+**Gab :**
 
 aa
 
-## Auteur
+## Commentaires sur le projet
 
-- <span style="color:crimson">Maxime Riverin</span>
-- Gabriel Lavictoire
+### Le tableau de suivi dans Planner vous a-t-il été utile pour le suivi du projet? Comment pourrions-nous l’améliorer?
+
+### Le déroulement des activités théoriques vs les activités de laboratoires vous sont-elles apparues adéquates?  
+
+### Avez-vous des commentaires critiques à émettre dans le but d’améliorer le déroulement et les apprentissages reliés à ce projet? 
+
+## Auteur.re
