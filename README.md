@@ -2,25 +2,26 @@
 
 ## Sommaire
 
-- [Présentation](#présentation)
-  - [Description, principaux défis](#defis-du-projet)
-  - [Liens](#liens)
-  - [Disparition des tâches](#disparition-des-tâches)
-- [Mon processus](#mon-processus)
-  - [Technologies utilisées](#technologies-utilisées)
-  - [Utilisation de l'IA](#utilisation-de-lia)
-- [Rapport de tests](#rapport-de-tests)
-  - [Les améliorations possibles](#les-améliorations-possibles)
-  - [Les tests qui restent à faire](#les-tests-qui-restent-à-faire)
-- [Bilan des apprentissages](#bilan-des-apprentissages)
-  - [Quels principaux apprentissages retenez-vous du projet Objectif Biodiversité Québec?](#quels-principaux-apprentissages-retenez-vous-du-projet-objectif-biodiversité-québec)
-  - [Développement continu : qu'avez-vous besoin d'améliorer ou d'approfondir?](#développement-continu)
- 
-- [Commentaires sur le projet](#commentaires-sur-le-projet)
-  - [Le tableau de suivi dans Planner vous a-t-il été utile pour le suivi du projet? Comment pourrions-nous l’améliorer?](#le-tableau-de-suivi-dans-planner-vous-a-t-il-été-utile-pour-le-suivi-du-projet-comment-pourrions-nous-laméliorer)
-  - [Le déroulement des activités théoriques vs les activités de laboratoires vous sont-elles apparues adéquates?](#le-déroulement-des-activités-théoriques-vs-les-activités-de-laboratoires-vous-sont-elles-apparues-adéquates)
-  - [Avez-vous des commentaires critiques à émettre dans le but d’améliorer le déroulement et les apprentissages reliés à ce projet? etc.](#avez-vous-des-commentaires-critiques-à-émettre-dans-le-but-daméliorer-le-déroulement-et-les-apprentissages-reliés-à-ce-projet-etc)
-- [Auteur.re](#auteur)
+- [P1 - Objectif BioDiversité (2026)](#p1---objectif-biodiversité-2026)
+  - [Sommaire](#sommaire)
+  - [Présentation](#présentation)
+    - [Description, principaux défis](#description-principaux-défis)
+    - [Liens](#liens)
+    - [Disparition des tâches](#disparition-des-tâches)
+  - [Mon Processus](#mon-processus)
+    - [Technologies utilisées](#technologies-utilisées)
+    - [Utilisation de l'IA](#utilisation-de-lia)
+  - [Rapport de tests](#rapport-de-tests)
+    - [Les améliorations possibles](#les-améliorations-possibles)
+    - [Les tests qui restent à faire](#les-tests-qui-restent-à-faire)
+  - [Bilan des apprentissages](#bilan-des-apprentissages)
+    - [Quels principaux apprentissages retenez-vous du projet Objectif Biodiversité Québec?](#quels-principaux-apprentissages-retenez-vous-du-projet-objectif-biodiversité-québec)
+    - [Développement continu](#développement-continu)
+  - [Commentaires sur le projet](#commentaires-sur-le-projet)
+    - [Le tableau de suivi dans Planner vous a-t-il été utile pour le suivi du projet? Comment pourrions-nous l’améliorer?](#le-tableau-de-suivi-dans-planner-vous-a-t-il-été-utile-pour-le-suivi-du-projet-comment-pourrions-nous-laméliorer)
+    - [Le déroulement des activités théoriques vs les activités de laboratoires vous sont-elles apparues adéquates?](#le-déroulement-des-activités-théoriques-vs-les-activités-de-laboratoires-vous-sont-elles-apparues-adéquates)
+    - [Avez-vous des commentaires critiques à émettre dans le but d’améliorer le déroulement et les apprentissages reliés à ce projet?](#avez-vous-des-commentaires-critiques-à-émettre-dans-le-but-daméliorer-le-déroulement-et-les-apprentissages-reliés-à-ce-projet)
+  - [Auteur.re](#auteurre)
 
 ## Présentation
 
@@ -74,15 +75,11 @@ de la base de données dans notre code.
 
 ### Technologies utilisées
 
-<span style="color:crimson">**Max :**</span>
+<span style="color:crimson">**Max & Gab:**</span>
 
 Dans ce projet, plusieurs technologies ont été utilisées afin de parvenir à un résultat concret. Il y a, certes, l'utilisation
 commune du HTML, CSS et Javascript, mais le PHP fait enfin son apparition ! De plus, L'utilisation du système de design du Québec
 est une nouveauté permettant d'améliorer nos compétences professionnelles.
-
-**Gab :**
-
-blablabla
 
 ### Utilisation de l'IA 
 
@@ -105,9 +102,9 @@ d'appliquer les enseignements dans divers contextes. De plus, j'ai pu expérimen
 j'avais très légèrement touché auparavant. Par exemple, en PHP, j'ai pu créer un système de filtrage. En CSS, j'ai pu
 développer les propriétés `object-fit/position` afin de créer une bannière Hero.
 
-**Gab :**
+<span style="color:blue">**Gab :**</span>
 
-balbalbal
+J'ai appris comment utiliser le php d'avantage pour que je puisse m'en servir pour des projet
 
 ### Développement continu
 Pour mes prochains projets, je souhaite approfondir :
@@ -117,9 +114,9 @@ Pour mes prochains projets, je souhaite approfondir :
 Je souhaite continuer le renforcement des connaissances en PHP afin de m'habituer davantage. Je souhaite aussi
 utiliser plus souvent les grilles CSS.
 
-**Gab :**
+<span style="color:blue">**Gab :**</span>
 
-aa
+J'espère utiliser le php plus souvent parce que je trouve ça vraiment intéressant
 
 ## Commentaires sur le projet
 
