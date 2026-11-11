@@ -129,7 +129,7 @@ ce que j'avais à faire. Je crois que le tableau de suivi pourrait être amélio
 
 <span style="color:blue">**Gab :**</span>
 
-aa
+Le tableau ne m'a pas vraiment servis non plus, souvant j'y pensait plus qu'on en avait un
 
 ### Le déroulement des activités théoriques vs les activités de laboratoires vous sont-elles apparues adéquates?  
 
@@ -138,6 +138,8 @@ aa
 Oui, je trouve que le temps associé pour chacune était adéquat. Je ne m'attendais pas à différement.
 
 <span style="color:blue">**Gab :**</span>
+
+Oui, les activités êtait le fun
 
 ### Avez-vous des commentaires critiques à émettre dans le but d’améliorer le déroulement et les apprentissages reliés à ce projet? 
 
@@ -148,7 +150,7 @@ Cependant, j'ai énormément apprécié qu'on puisse enfin combiner le PHP avec 
 
 <span style="color:blue">**Gab :**</span>
 
-aa
+J'avoue avec Max, on a pris trop de temps, sinon c'était intéressant.
 
 ## Auteur.re
 - Maxime Riverin
