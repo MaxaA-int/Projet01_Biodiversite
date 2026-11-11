@@ -122,8 +122,34 @@ J'espère utiliser le php plus souvent parce que je trouve ça vraiment intéres
 
 ### Le tableau de suivi dans Planner vous a-t-il été utile pour le suivi du projet? Comment pourrions-nous l’améliorer?
 
+<span style="color:crimson">**Max :**</span>
+
+Je trouve qu'il était plus embêtant qu'autre chose. Celui-ci était redondant de devoir le mettre à jour alors que je savais pertinemment
+ce que j'avais à faire. Je crois que le tableau de suivi pourrait être amélioré en le rendant plus simple et moins redondant.
+
+<span style="color:blue">**Gab :**</span>
+
+aa
+
 ### Le déroulement des activités théoriques vs les activités de laboratoires vous sont-elles apparues adéquates?  
+
+<span style="color:crimson">**Max :**</span>
+
+Oui, je trouve que le temps associé pour chacune était adéquat. Je ne m'attendais pas à différement.
+
+<span style="color:blue">**Gab :**</span>
 
 ### Avez-vous des commentaires critiques à émettre dans le but d’améliorer le déroulement et les apprentissages reliés à ce projet? 
 
+<span style="color:crimson">**Max :**</span>
+
+Je trouve qu'on a passé beaucoup trop de temps à faire ce projet. J'ai l'impression qu'on aurait pu le réaliser en beaucoup moins de temps.
+Cependant, j'ai énormément apprécié qu'on puisse enfin combiner le PHP avec le HTML, CSS et Javascript. J'ai trouvé que c'était un projet très intéressant et j'ai beaucoup aimé le réaliser.
+
+<span style="color:blue">**Gab :**</span>
+
+aa
+
 ## Auteur.re
+- Maxime Riverin
+- Gabriel Lavictoire
