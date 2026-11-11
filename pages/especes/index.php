@@ -111,7 +111,7 @@ $pdosResultat->closeCursor();
 
 <main class="main">
     <div class="fil-arianne">
-        <a href="<?php echo $niveau ?>index.php">Accueil</a> <
+        <a href="<?php echo $niveau ?>index.php">Accueil</a> &lt;
         <a href="index.php">Liste des espèces</a>
     </div>
 

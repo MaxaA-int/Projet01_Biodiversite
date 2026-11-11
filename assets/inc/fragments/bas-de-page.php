@@ -6,7 +6,7 @@
             <li class="pied-de-page__item">
                 <h6>Navigation Principale</h6>
                 <nav aria-label="Navigation du pied de page" class="pied-de-page__navigation">
-                    <ul class="nav__list flex" id="navList">
+                    <ul class="nav__list flex" id="">
                         <li class="nav__list-item">
                             <a href="<?php echo $niveau ?>index.php" class="nav__link nav__link--active"
                                aria-current="page">Accueil</a>
