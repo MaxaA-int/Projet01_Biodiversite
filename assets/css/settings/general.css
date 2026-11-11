@@ -55,6 +55,13 @@
         }
     }
 
+    ul button {
+        width: 100%;
+        margin: 0;
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+
     /* Affichage Minimum Tablette - 528px */
     @media screen and (min-width: 33rem) {
     }

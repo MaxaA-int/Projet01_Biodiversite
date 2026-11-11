@@ -185,7 +185,10 @@ $pdosResultat->closeCursor();
                     echo "<p class='" . ajouterClasseStatut($espece['statut_LEMV']) . "'>Statut : $espece[statut_LEMV] </p>";
                     echo "</div>";
 
-                    echo "<a href='fiche/index.php?id_espece=$espece[id]'>Voir la fiche</a>";
+                    echo "<form action='fiche/index.php?' method='get>'>";
+                    echo "<input type='hidden' name='id_espece' value='$espece[id]'>";
+                    echo "<button class='qc-button qc-secondary' type='submit' value='$espece[nom_francais]'>Voir la fiche</button>";
+                    echo "</form>";
                     echo "</li>";
 
 
