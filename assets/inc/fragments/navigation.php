@@ -18,7 +18,6 @@
 </qc-piv-header>
 
 <div class="menu-principal__containeur">
-    <a href="#contenu" class="screen-reader-only focusable">Allez au contenu</a>
     <nav class="nav-principale" aria-label="Menu Principal">
         <ul class="nav__list flex" id="navList">
 

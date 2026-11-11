@@ -28,6 +28,17 @@ $pdosResultatImage = $pdoConnexion->query($strRequeteImage);
 $arrImage = $pdosResultatImage->fetch();
 $pdosResultatImage->closecursor();
 
+$strRequeteCarte =
+    "SELECT images.* 
+FROM images
+INNER JOIN especes ON images.espece_id = especes.id
+WHERE images.espece_id = $intIdEspece AND `est_aire-repartition` = 1";
+
+$pdosResultatCarte = $pdoConnexion->query($strRequeteCarte);
+
+$arrCarte = $pdosResultatCarte->fetch();
+$pdosResultatCarte->closecursor();
+
 $strRequeteEspeceSim = "SELECT DISTINCT especes.id AS espece_id, especes.nom_francais AS nom, groupes.nom_groupe FROM groupes INNER JOIN especes ON groupes.id = especes.groupe_id WHERE especes.groupe_id = " . $arrEspeces['groupe_id'] . " AND especes.id != $intIdEspece ORDER BY rand() LIMIT 3";
 
 $pdosResultatEspeceSim = $pdoConnexion->query($strRequeteEspeceSim);
@@ -124,50 +135,47 @@ $pdosResultatEspeceSim->closeCursor();
             <section id="repartition">
                 <?php if (isset($arrEspeces['repartition'])) { ?>
                     <h2>Répartition :</h2>
-                    <li><?php echo $arrEspeces['repartition']; ?></li>
-                    <hr>
+                    <li><?php echo $arrEspeces['repartition']; ?>
+                    <img src="<?php echo $niveau ?>assets/img/<?php echo $arrCarte['nom_image']; ?>" alt="<?php echo $arrCarte['bas-de-vignette']; ?>">
+                    </li>
                 <?php } ?>
             </section>
             <section id="habitat">
                 <?php if (isset($arrEspeces['habitat'])) { ?>
+                    
                     <h2>Habitat :</h2>
                     <li><?php echo $arrEspeces['habitat']; ?></li>
-                    <hr>
+                    
                 <?php } ?>
             </section>
             <section id="etat">
                 <?php if (isset($arrEspeces['etat_situation'])) { ?>
                     <h2>État de la situation :</h2>
                     <li><?php echo $arrEspeces['etat_situation']; ?></li>
-                    <hr>
                 <?php } ?>
             </section>
             <section id="alimentation">
                 <?php if (isset($arrEspeces['alimentation'])) { ?>
                     <h2>Alimentation :</h2>
                     <li><?php echo $arrEspeces['alimentation']; ?></li>
-                    <hr>
                 <?php } ?>
             </section>
             <section id="reproduction">
                 <?php if (isset($arrEspeces['reproduction'])) { ?>
                     <h2>Reproduction :</h2>
                     <li><?php echo $arrEspeces['reproduction']; ?></li>
-                    <hr>
                 <?php } ?>
             </section>
             <section id="comportement">
                 <?php if (isset($arrEspeces['comportement'])) { ?>
                     <h2>Comportement :</h2>
                     <li><?php echo $arrEspeces['comportement']; ?></li>
-                    <hr>
                 <?php } ?>
             </section>
             <section id="menaces">
                 <?php if (isset($arrEspeces['menaces'])) { ?>
                     <h2>Menaces :</h2>
                     <li><?php echo $arrEspeces['menaces']; ?></li>
-                    <hr>
                 <?php } ?>
             </section>
             <section id="memegroupe">
